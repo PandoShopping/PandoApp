@@ -1,0 +1,12 @@
+{
+  "AppSyncApiName": "pando",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authpando479a1f82",
+      "Outputs.UserPoolId"
+    ]
+  },
+  "AuthModeLastUpdated": "2023-02-08T05:03:45.501Z"
+}
