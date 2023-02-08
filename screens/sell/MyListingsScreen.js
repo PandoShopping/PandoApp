@@ -2,10 +2,10 @@ import React from "react";
 import { Text, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
-import { API, graphqlOperation } from 'aws-amplify';
-import { listListings } from './graphql/queries';
+// import { API, graphqlOperation } from 'aws-amplify';
+//import { listListings } from './graphql/queries';
 
-const allListings = await API.graphql(graphqlOperation(listListings));
+//const allListings = await API.graphql(graphqlOperation(listListings));
 
 const MyListingsScreen = () => {
 return (

@@ -60,3 +60,13 @@ https://fullstackserverless.github.io/docs/auth1-01
 - create a form component 
 
 one-to-many relationship. User object with listings
+
+User: 
+- locationPermissionsEnabled!
+- perissions (make this into an enum)
+- location (aws type exists for location? )
+- username 
+- contactMethods. array of Strings
+- profilePicture 
+- one to many of all their listings 
+- payment integrations? 
