@@ -7,12 +7,13 @@ import Icon from 'react-native-vector-icons/FontAwesome5'
 import { Amplify } from 'aws-amplify'
 import awsmobile from './src/aws-exports'
 import { withAuthenticator } from 'aws-amplify-react-native';
+import { AmplifyTheme } from 'aws-amplify-react-native';
 
 Amplify.configure({
   ...awsmobile,
   Analytics: {
     disabled: true,
-  },
+  }
 });
 
 const Tab = createMaterialBottomTabNavigator();
@@ -45,4 +46,11 @@ const styles = StyleSheet.create({
   },
 });
 
-export default withAuthenticator(App); 
+
+
+const MySectionHeader = Object.assign({}, AmplifyTheme.sectionHeader, { background: '#C4C4C4' });
+
+const MyTheme = Object.assign({}, AmplifyTheme, { sectionHeader: MySectionHeader, button: {backgroundColor: '#C4C4C4'} } );
+
+
+export default withAuthenticator(App, false, [], null, MyTheme);
