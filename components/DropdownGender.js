@@ -6,7 +6,7 @@ import DropDownPicker from 'react-native-dropdown-picker';
 
 export default function App() {
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState(['italy', 'spain', 'barcelona', 'finland']);
+  const [value, setValue] = useState(['']);
 
   const [gender, setGender] = useState([
     {label: 'Womens', value: 'womens'},

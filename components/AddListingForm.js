@@ -7,6 +7,7 @@ import TextInputExample from './../components/TextInputExample';
 import DropdownGender from './../components/DropdownGender'; 
 import DropdownCategory from './../components/DropdownCategory'; 
 import NumericalInput from './../components/NumericalInput'; 
+import DropdownSize from './../components/DropdownSize'; 
 
 
 const AddListingForm = () => { 
@@ -48,6 +49,8 @@ const AddListingForm = () => {
             <TextInputExample title = "Enter brand name"> </TextInputExample>
            
            <TextInput placeholder="Size"/> 
+           <DropdownSize>   </DropdownSize>
+
            
  
 
