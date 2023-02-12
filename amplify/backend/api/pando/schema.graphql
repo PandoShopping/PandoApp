@@ -43,6 +43,3 @@ enum ListingGender {
   FEMALE 
   OTHER
 }
-
-
-
