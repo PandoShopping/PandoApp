@@ -1,11 +1,10 @@
 import { FormField } from 'aws-amplify-react-native';
 import React, {useState, useEffect, Component} from 'react';
-import { Text, View, TextInput, TouchableOpacity, StyleSheet} from 'react-native';
+import { Text, View, TextInput, Keyboard, StyleSheet, TouchableWithoutFeedback} from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
 import FloatLabelTextInput from 'react-native-floating-label-text-input';
 import TextInputExample from './../components/TextInputExample'; 
 import DropdownGender from './DropdownGender'; 
-
 import DropdownCategory from './DropdownCategory'; 
 
 const AddListingForm = () => { 
@@ -15,6 +14,8 @@ const AddListingForm = () => {
 
 
     return (
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+
         <View style={{
             flex: 1,
             alignItems: 'left',
@@ -40,11 +41,14 @@ const AddListingForm = () => {
            <TextInput placeholder = "Price" /> 
            <Text style = {styles.text}>Brand</Text>
             <TextInputExample title = "Enter brand name"> </TextInputExample>
+           
            <TextInput placeholder="Size"/> 
            
  
 
         </View>
+        </TouchableWithoutFeedback>
+
     );
 };
 

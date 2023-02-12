@@ -1,21 +1,29 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, TextInput} from 'react-native';
+import { View, StyleSheet, ScrollView, TextInput, Keyboard, TouchableWithoutFeedback} from 'react-native';
 import { useState } from 'react'; 
 
 const TextInputExample = (props) => {
-  const [text, onChangeText] = useState("a"); 
-  const [number, onChangeNumber] = React.useState('');
+  const [text, onChangeText] = useState("Enter words"); 
+  const [words, onChangeWords] = React.useState('');
 
   return (
-    <SafeAreaView>
-      <TextInput
+    //<TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+
+    <View>     
+  <TextInput
         style={styles.input}
-        onChangeText={onChangeNumber}
-        value={number}
+        onChangeText={onChangeWords}
+        value={words}
+        multiline={true}
+        maxLength={250} 
         placeholder={props.title}
-        keyboardType="numeric"
-      />
-    </SafeAreaView>
+        keyboardType="default"
+        
+        
+      /> 
+ </View>
+  //  </TouchableWithoutFeedback>
+
   );
 };
 
