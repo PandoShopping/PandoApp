@@ -1,26 +1,18 @@
 import { FormField } from 'aws-amplify-react-native';
-import React, {useState, Component} from 'react';
-import { Text, View, TextInput, StyleSheet} from 'react-native';
+import React, {useState, useEffect, Component} from 'react';
+import { Text, View, TextInput, TouchableOpacity, StyleSheet} from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
+import FloatLabelTextInput from 'react-native-floating-label-text-input';
+import TextInputExample from './../components/TextInputExample'; 
+import DropdownGender from './DropdownGender'; 
 
-
+import DropdownCategory from './DropdownCategory'; 
 
 const AddListingForm = () => { 
  //  const [category, setCategory] = useState('Clothing');
 
-    const [open, setOpen] = useState(false);
-    const [value, setValue] = useState([]);
-    
-    const [gender, setGender] = useState([
-      {label: 'Womens', value: 'womens'},
-      {label: 'Mens', value: 'mens'},
-      {label: 'Other', value: 'other'}
-    ]);
 
-    const [categories, setCategory] = useState([
-        {label: 'Clothing', value: 'clothing'},
-        {label: 'Other', value: 'other'}
-      ]);
+
 
     return (
         <View style={{
@@ -29,47 +21,28 @@ const AddListingForm = () => {
             justifyContent: 'center',
             paddingHorizontal: 15,
           }}>
-            <Text>Select clothing gender category</Text>
-             <DropDownPicker
-              multiple={true}
-              min={1}
-              max={3}
-              mode="BADGE"
-        badgeDotColors={["#e76f51", "#00b4d8", "#8ac926", "#00b4d8", "#e9c46a"]}
-             
-      open={open}
-      value={value}
-      items={gender}
-      setOpen={setOpen}
-      setValue={setValue}
-      setGender={setGender}
+          
+            <Text style = {styles.text}>Select gender for clothing</Text>
 
-    />
-            <TextInput placeholder="Enter Listing Name"/>
-            <TextInput placeholder="Description"/>
+            <DropdownGender> </DropdownGender>
+            <Text style = {styles.text}>Enter Listing Name</Text>
+            <TextInputExample title = "Enter listing name"> </TextInputExample>
+            
+            
             <Text>Select category</Text>
+            <DropdownCategory>   </DropdownCategory>
 
-<DropDownPicker
-              multiple={true}
-              min={1}
-              max={3}
-              mode="BADGE"
-        badgeDotColors={["#e76f51", "#00b4d8", "#8ac926", "#00b4d8", "#e9c46a"]}
-             
-      open={open}
-      value={value}
-      items={categories}
-      setOpen={setOpen}
-      setValue={setValue}
-      setCategory={setCategory}
+            <Text style = {styles.text}>Description</Text>
+            <TextInputExample title = "Add optional description here"> </TextInputExample>
 
-    />
          
             <TextInput placeholder = "Original price" /> 
            <TextInput placeholder = "Price" /> 
-           <TextInput placeholder="Brand"/> 
+           <Text style = {styles.text}>Brand</Text>
+            <TextInputExample title = "Enter brand name"> </TextInputExample>
            <TextInput placeholder="Size"/> 
            
+ 
 
         </View>
     );
@@ -81,33 +54,22 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingHorizontal: 15
+    paddingHorizontal: 15,
+
+    input: {
+        height: 40,
+        margin: 12,
+        borderWidth: 1,
+        padding: 10,
+      },
+
+      text: {
+        marginTop: 10,
+        marginBottom: 5,
+        marginLeft: 3,
+  }
+
   });
 
-  class Example extends Component {
-  fieldRef = React.createRef();
-
-  onSubmit = () => {
-    let { current: field } = this.fieldRef;
-
-    console.log(field.value());
-  };
-
-  formatText = (text) => {
-    return text.replace(/[^+\d]/g, '');
-  };
-
-  render() {
-    return (
-      <OutlinedTextField
-        label='Phone number'
-        keyboardType='phone-pad'
-        formatText={this.formatText}
-        onSubmitEditing={this.onSubmit}
-        ref={this.fieldRef}
-      />
-    );
-  }
-}
 
 export default AddListingForm; 
