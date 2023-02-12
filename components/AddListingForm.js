@@ -3,11 +3,12 @@ import React, {useState, useEffect, Component} from 'react';
 import { Text, View, TextInput, Keyboard, StyleSheet, TouchableWithoutFeedback} from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
 import FloatLabelTextInput from 'react-native-floating-label-text-input';
-import TextInputExample from './../components/TextInputExample'; 
-import DropdownGender from './../components/DropdownGender'; 
-import DropdownCategory from './../components/DropdownCategory'; 
-import NumericalInput from './../components/NumericalInput'; 
-import DropdownSize from './../components/DropdownSize'; 
+import TextInputExample from './functions/TextInputExample'; 
+import DropdownGender from './functions/DropdownGender'; 
+import DropdownCategory from './functions/DropdownCategory'; 
+import NumericalInput from './functions/NumericalInput'; 
+import DropdownSize from './functions/DropdownSize'; 
+import MultilineTextInput from './functions/MultilineTextInput'; 
 
 
 const AddListingForm = () => { 
@@ -30,14 +31,15 @@ const AddListingForm = () => {
 
             <DropdownGender> </DropdownGender>
             <Text style = {styles.text}>Enter Listing Name</Text>
-            <TextInputExample title = "Enter listing name"> </TextInputExample>
-            
+            <MultilineTextInput title = "Little black dress with mesh cutouts, never used"> 
+ </MultilineTextInput>            
             
             <Text>Select category</Text>
             <DropdownCategory>   </DropdownCategory>
 
             <Text style = {styles.text}>Description</Text>
-            <TextInputExample title = "Add optional description here"> </TextInputExample>
+            <MultilineTextInput title = "Add optional description here"> 
+ </MultilineTextInput>
 
             <Text style = {styles.text}>Original Price</Text>
 
@@ -46,9 +48,9 @@ const AddListingForm = () => {
 
             <NumericalInput title = "Listing Price"> </NumericalInput>
            <Text style = {styles.text}>Brand</Text>
-            <TextInputExample title = "Enter brand name"> </TextInputExample>
+            <TextInputExample title = "Nordstrom Rack"> </TextInputExample>
            
-           <TextInput placeholder="Size"/> 
+            <Text style = {styles.text}>Size</Text>
            <DropdownSize>   </DropdownSize>
 
            

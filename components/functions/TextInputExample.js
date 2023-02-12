@@ -14,7 +14,7 @@ const TextInputExample = (props) => {
         style={styles.input}
         onChangeText={onChangeWords}
         value={words}
-        multiline={true}
+      //multiline={props.true}
         maxLength={250} 
         placeholder={props.title}
         keyboardType="default"
