@@ -4,8 +4,10 @@ import { Text, View, TextInput, Keyboard, StyleSheet, TouchableWithoutFeedback} 
 import DropDownPicker from 'react-native-dropdown-picker';
 import FloatLabelTextInput from 'react-native-floating-label-text-input';
 import TextInputExample from './../components/TextInputExample'; 
-import DropdownGender from './DropdownGender'; 
-import DropdownCategory from './DropdownCategory'; 
+import DropdownGender from './../components/DropdownGender'; 
+import DropdownCategory from './../components/DropdownCategory'; 
+import NumericalInput from './../components/NumericalInput'; 
+
 
 const AddListingForm = () => { 
  //  const [category, setCategory] = useState('Clothing');
@@ -36,9 +38,12 @@ const AddListingForm = () => {
             <Text style = {styles.text}>Description</Text>
             <TextInputExample title = "Add optional description here"> </TextInputExample>
 
-         
-            <TextInput placeholder = "Original price" /> 
-           <TextInput placeholder = "Price" /> 
+            <Text style = {styles.text}>Original Price</Text>
+
+            <NumericalInput title = "Original Price"> </NumericalInput>
+            <Text style = {styles.text}>Listing Price</Text>
+
+            <NumericalInput title = "Listing Price"> </NumericalInput>
            <Text style = {styles.text}>Brand</Text>
             <TextInputExample title = "Enter brand name"> </TextInputExample>
            

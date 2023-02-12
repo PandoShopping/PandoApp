@@ -16,15 +16,16 @@ export default function App() {
 
   return (
     <View style={{
-
     }}>
       <DropDownPicker
+      
         open={open}
         value={value}
         items={categories}
         setOpen={setOpen}
         setValue={setValue}
         setCategory={setCategory}
+        
 
         multiple={true}
         mode="BADGE"
