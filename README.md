@@ -56,14 +56,20 @@ https://fullstackserverless.github.io/docs/auth1-01
 - get location permissions from uesr 
 - add user properties (ie. Location, payment  methods, etc.)
 - payment methods integration 
-- figure out typescript 
+- figure out using typescript 
+- figure out using tailwind 
 - create a form component 
+- integreate React Query 
+https://www.takeshape.io/articles/how-to-use-react-query-with-react-and-graphql/
+
 
 one-to-many relationship. User object with listings
 
+
+
 User: 
 - locationPermissionsEnabled!
-- perissions (make this into an enum)
+
 - location (aws type exists for location? )
 - username 
 - contactMethods. array of Strings
@@ -71,6 +77,9 @@ User:
 - one to many of all their listings 
 - payment integrations? 
 
+
+add later: 
+- perissions (make this into an enum). one to one with user 
 
 
 # Getting Started with Amplify CLI
@@ -81,4 +90,3 @@ Helpful resources:
 - Amplify CLI documentation: https://docs.amplify.aws/cli
 - More details on this folder & generated files: https://docs.amplify.aws/cli/reference/files
 - Join Amplify's community: https://amplify.aws/community/
-
