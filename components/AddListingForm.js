@@ -14,9 +14,6 @@ import MultilineTextInput from './functions/MultilineTextInput';
 const AddListingForm = () => { 
  //  const [category, setCategory] = useState('Clothing');
 
-
-
-
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
 
