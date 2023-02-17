@@ -29,7 +29,6 @@ const TextInputExample = (props) => {
 const styles = StyleSheet.create({
   input: {
     height: 40,
-    marginBottom: 10,
     width: 360,
 
     borderWidth: 1,

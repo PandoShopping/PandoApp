@@ -3,12 +3,12 @@ import React, {useState, useEffect, Component} from 'react';
 import { Text, View, TextInput, Keyboard, StyleSheet, TouchableWithoutFeedback} from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
 import FloatLabelTextInput from 'react-native-floating-label-text-input';
-import TextInputExample from './functions/TextInputExample'; 
-import DropdownGender from './functions/DropdownGender'; 
-import DropdownCategory from './functions/DropdownCategory'; 
-import NumericalInput from './functions/NumericalInput'; 
-import DropdownSize from './functions/DropdownSize'; 
-import MultilineTextInput from './functions/MultilineTextInput'; 
+import TextInputExample from '../../components/functions/TextInputExample'; 
+import DropdownGender from '../../components/functions/DropdownGender'; 
+import DropdownCategory from '../../components/functions/DropdownCategory'; 
+import NumericalInput from '../../components/functions/NumericalInput'; 
+import DropdownSize from '../../components/functions/DropdownSize'; 
+import MultilineTextInput from '../../components/functions/MultilineTextInput'; 
 
 
 const AddListingForm = () => { 
@@ -22,16 +22,18 @@ const AddListingForm = () => {
             alignItems: 'left',
             justifyContent: 'center',
             paddingHorizontal: 15,
+            backgroundColor: '#f5f7fa',
           }}>
           
-            <Text style = {styles.text}>Select gender for clothing</Text>
+
+          <Text style = {{marginBottom: 5, marginLeft: 3}}>Select gender for clothing</Text>
 
             <DropdownGender> </DropdownGender>
             <Text style = {styles.text}>Enter Listing Name</Text>
             <MultilineTextInput title = "Little black dress with mesh cutouts, never used"> 
  </MultilineTextInput>            
             
-            <Text>Select category</Text>
+ <Text style = {styles.text}>Select category</Text>
             <DropdownCategory>   </DropdownCategory>
 
             <Text style = {styles.text}>Description</Text>
@@ -61,7 +63,6 @@ const AddListingForm = () => {
 
 
 const styles = StyleSheet.create({
-    backgroundColor: '#171717',
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',

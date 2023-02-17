@@ -41,6 +41,8 @@ export default function App() {
     <View style={{
     }}>
       <DropDownPicker
+
+
       
         open={open}
         value={value}

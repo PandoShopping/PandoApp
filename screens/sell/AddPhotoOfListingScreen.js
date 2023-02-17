@@ -1,6 +1,5 @@
 import React from "react";
 import { Text, View, StyleSheet } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
 import * as ImagePicker from 'expo-image-picker';
 import { Button, ImageViewer } from '../../components'; 
 import { placeholderImage } from "../../constants";
@@ -20,7 +19,7 @@ const AddPhotoOfListingScreen = () => {
     if (!result.canceled) {
       setSelectedImage(result.assets[0].uri); 
     } else {
-      alert('You did not select any image.');
+      alert('Please select or take a photo of your product!');
     }
   }; 
 

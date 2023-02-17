@@ -5,7 +5,8 @@ export default function Button({ label, theme, onPress}) {
   if (theme === "primary") { 
     return (
       <View
-      style={[styles.buttonContainer, { borderWidth: 4, borderColor: "#ffd33d", borderRadius: 18 }]}
+      style={[styles.buttonContainer,]}
+      // { borderWidth: 4, borderColor: "#ffd33d", borderRadius: 18 }
       >
         <Pressable
           style={[styles.button, { backgroundColor: "#fff" }]}
@@ -24,8 +25,9 @@ export default function Button({ label, theme, onPress}) {
   } 
 
   return (
+    // onPress={() => alert('You pressed a button.')}
     <View style={styles.buttonContainer}>
-        <Pressable style={styles.button} onPress={() => alert('You pressed a button.')}>
+        <Pressable style={styles.button}>
           <Text style={styles.buttonLabel}>{label}</Text>
         </Pressable>
       </View>
@@ -34,15 +36,16 @@ export default function Button({ label, theme, onPress}) {
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    width: 320,
-    height: 68,
+    width: 275,
+    height: 55,
     marginHorizontal: 20,
+    marginBottom: 5,
     alignItems: 'center',
     justifyContent: 'center',
     padding: 3,
   },
   button: {
-    borderRadius: 10,
+    borderRadius: 50,
     width: '100%',
     height: '100%',
     alignItems: 'center',
@@ -50,10 +53,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   buttonIcon: {
-    paddingRight: 8,
+    paddingRight: 10,
   },
   buttonLabel: {
     color: '#fff',
-    fontSize: 16,
+    fontSize: 14,
   },
 });
