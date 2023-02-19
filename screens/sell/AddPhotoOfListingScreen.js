@@ -4,7 +4,6 @@ import { Ionicons } from "@expo/vector-icons";
 import * as ImagePicker from 'expo-image-picker';
 import { Button, ImageViewer } from '../../components'; 
 import { placeholderImage } from "../../constants";
-
 import { useState } from 'react'; 
 
 const AddPhotoOfListingScreen = () => {

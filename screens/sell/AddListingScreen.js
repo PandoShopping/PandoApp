@@ -1,22 +1,25 @@
-import { API, graphqlOperation } from 'aws-amplify';
-import { createListing, updateListing, deleteListing } from './graphql/mutations';
+import React from "react";
+import { Text, View, StyleSheet, SafeAreaView } from "react-native";
+import { Button, ImageViewer, TestDisplayAllListings } from '../../components'; 
+import TestAddListingForm from "../../components/TestAddListingForm";
 
-//TODO: move to test data in constnats 
-const testListing = {
-  name: "testName", 
-  price: 4.20, 
-  brand: "testBrand", 
-}
+const AddListingScreen = () => {
+  return (
+    <SafeAreaView style={styles.container}>
+    <TestAddListingForm/> 
+   </SafeAreaView>
+  ); 
+} 
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  text: {
+    fontSize: 25,
+    fontWeight: '500',
+  },
+});
 
 
-
-
-/* create a todo */
-await API.graphql(graphqlOperation(createListing, {input: testListing}));
-
-/* update a todo. is testListingId right? */
-await API.graphql(graphqlOperation(updateTodo, { input: { id: listingId, name: "Updated name" }}));
-
-/* delete a todo */
-await API.graphql(graphqlOperation(deleteTodo, { input: { id: listingId }}));
-
+export default AddListingScreen; 

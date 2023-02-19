@@ -2,17 +2,12 @@
 # all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
 input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
 
-
-type User @model {
+type Todo @model {
   id: ID!
-  username: String!
-  contactMethods: [String]
-  profilePicture: String 
-  locationPermissionsEnabled: Boolean!
-  location: String
-  hasShop: Boolean  
-  listings: [Listing!] @relation
+  name: String!
+  description: String
 }
+
 
 type Listing @model @auth(rules: [
   { allow: private,  provider: iam, operations: [read]},
@@ -20,7 +15,6 @@ type Listing @model @auth(rules: [
 ]) { 
   id: ID!
   name: String!
-  storeName: String! 
   description: String
   category: ListingCategory
   price: Float!
@@ -28,16 +22,6 @@ type Listing @model @auth(rules: [
   brand: String!
   size: ListingSize
   gender: ListingGender
-  isPurchased: Boolean!
-}
-
-type Store @model @auth(rules: [
-  { allow: private,  provider: iam, operations: [read]},
-  { allow: owner }
-]) { 
-  id: ID!
-  storeName: String! 
-  user: User #one to one relation. one store = one user (when this is triggered, hasShop is enbaled automatically? )
 }
 
 enum ListingCategory { 
@@ -58,4 +42,3 @@ enum ListingGender {
   FEMALE 
   OTHER
 }
-
