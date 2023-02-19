@@ -55,7 +55,6 @@ function App() {
     
  
    <NavigationContainer >
-   <Icon name="comments" size={30} color="#900" />
    <MyTabs />
  <StatusBar style="auto" />
  
