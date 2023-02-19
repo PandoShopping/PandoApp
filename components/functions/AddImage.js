@@ -29,15 +29,15 @@ const AddImage = () => {
            placeholderImageSource={placeholderImage} 
            selectedImage={selectedImage}
          />
+
+         
        </View>
-	   <View style={styles.footerContainer}>
+	   <View style ={styles.footerContainer}>
        {/*TODO: add camera */}
          <Button theme="primary" label="Take a photo"/>
- 
          <Button theme="primary" label="Choose a photo" onPress={pickImageAsync}/>
-         <Button label="Use this photo" />
+         <Button theme="bigAss" label="choose 4" onPress={pickImageAsync}/>
        </View>
-
 
 	</View>
 );

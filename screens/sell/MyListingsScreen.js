@@ -17,12 +17,10 @@ return (
 	<View style={{ flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: '#F5F7FA'}}>
 	<Text style={{ color: "black", fontSize: 22, textAlign: "center", marginTop: 60}}>Add listing</Text>
 	{/* comment copy paste */}
-	<AddImage>
+	<AddImage />
+	{/* <AddListingForm>
 
-	</AddImage>
-	<AddListingForm>
-
-	</AddListingForm>
+	</AddListingForm> */}
 
 
 	</View>
