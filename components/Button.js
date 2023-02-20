@@ -34,7 +34,8 @@ export default function Button({ label, theme, onPress}) {
         <Pressable
           style={[styles.button, { backgroundColor: "#fff" }]}
           onPress={onPress}
-        >
+        > 
+        {/* random shit */}
              <FontAwesome
             name="picture-o"
             size={18}
