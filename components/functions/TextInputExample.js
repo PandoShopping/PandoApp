@@ -29,13 +29,11 @@ const TextInputExample = (props) => {
 
 const styles = StyleSheet.create({
   input: {
-    height: 40,
+    height: 50,
    // marginBottom: 10,
     width: 360,
-
-    borderWidth: 1,
-    padding: 10,
-    borderRadius: 8,
+    padding: 15,
+    borderRadius: 30,
     backgroundColor: 'white',
   },
 });

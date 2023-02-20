@@ -18,8 +18,6 @@ const TextInputExample = (props) => {
         placeholder={props.title}
         keyboardType="numerical"
         
-        
-        
       /> 
  </View>
   //  </TouchableWithoutFeedback>
@@ -29,13 +27,13 @@ const TextInputExample = (props) => {
 
 const styles = StyleSheet.create({
   input: {
-    height: 40,
+    height: 50,
     //marginBottom: 10,
     width: 360,
    //  borderColor: 'white',
-    borderWidth: 1,
-    padding: 10,
-    borderRadius: 8,
+   // borderWidth: 1,
+    padding: 15,
+    borderRadius: 30,
     backgroundColor: 'white',
   },
 });

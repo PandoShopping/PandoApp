@@ -8,7 +8,7 @@ const MyListingsScreen = () => {
 return (
   <SafeAreaView style={styles.container}>
   <ScrollView>
-    <Text style={styles.text}>UPLOAD LISTING</Text>
+    <Text style={styles.text}>Create new listing</Text>
 	  <AddImage />
 	  <AddListingForm />   
   </ScrollView>
@@ -30,10 +30,10 @@ const styles = StyleSheet.create({
   text: { 
     color: "black", 
     fontSize: 22, 
-    fontFamily: "Avenir Next",
-    fontWeight: "bold", 
-    textAlign: "right", 
-    marginRight: 30, 
+    fontFamily: "Avenir-Heavy",
+   // fontWeight: "medium", 
+    textAlign: "center", 
+    padding: 10,
   }
 })
 

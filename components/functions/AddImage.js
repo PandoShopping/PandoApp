@@ -42,7 +42,7 @@ const AddImage = () => {
 	<View style={{ flex: 1, alignItems: "center", justifyContent: "center"}}>
 	   <View style ={styles.footerContainer}>
        {/*TODO: add camera */}
-         <Button theme="bigAss" label="Choose Image" onPress={pickImageAsync}/>
+         <Button theme="bigAss" label="Upload or choose up to 4 images" onPress={pickImageAsync}/>
        </View>
 
 	</View>
@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
 	footerContainer: {
 	  alignItems: 'center',
 	},
+
   });
 
   export default AddImage;

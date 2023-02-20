@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { MultiSelect } from 'react-native-element-dropdown';
-import PersonOutline from 'react-native-vector-icons/Ionicons';
+import Shirt from 'react-native-vector-icons/Ionicons';
 
 const data = [
-  { label: 'Womens', value: 'Womens' },
-  { label: 'Mens', value: 'Mens' },
-  { label: 'Other', value: 'Other'}
+  { label: 'Clothing', value: 'Clothing' },
+  { label: 'Other', value: 'Other' },
 ];
 
 const MultiSelectComponent = () => {
@@ -30,10 +29,10 @@ const MultiSelectComponent = () => {
           setSelected(item);
         }}
         renderLeftIcon={() => (
-          <PersonOutline
+          <Shirt
             style={styles.icon}
             color="black"
-            name="person-outline"
+            name="shirt-outline"
             size={20}
           />
         )}

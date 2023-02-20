@@ -5,7 +5,7 @@ import DropDownPicker from 'react-native-dropdown-picker';
 import FloatLabelTextInput from 'react-native-floating-label-text-input';
 import TextInputExample from '../../components/functions/TextInputExample';
 import DropdownGender from '../../components/functions/DropdownGender';
-import DropdownCategory from '../../components/functions/DropdownCategory';
+import Dropdown from '../../components/functions/Dropdown';
 import NumericalInput from '../../components/functions/NumericalInput';
 import DropdownSize from '../../components/functions/DropdownSize';
 import MultilineTextInput from '../../components/functions/MultilineTextInput';
@@ -20,26 +20,24 @@ const AddListingForm = () => {
       <View style={styles.backgroundView}>
 
 
-        <Text style={styles.descriptionText}>Select gender for clothing</Text>
-
+        <Text style={styles.topmostText}>Select clothing gender</Text>
         <DropdownGender> </DropdownGender>
         <Text style={styles.text}>Enter Listing Name</Text>
         <MultilineTextInput title="Little black dress with mesh cutouts, never used">
         </MultilineTextInput>
 
         <Text style={styles.text}>Select category</Text>
-        <DropdownCategory>   </DropdownCategory>
+        <Dropdown>   </Dropdown>
 
         <Text style={styles.text}>Description</Text>
         <MultilineTextInput title="Add optional description here">
         </MultilineTextInput>
 
-        <Text style={styles.text}>Original Price</Text>
-
-        <NumericalInput title="Original Price"> </NumericalInput>
-        <Text style={styles.text}>Listing Price</Text>
-
-        <NumericalInput title="Listing Price"> </NumericalInput>
+        <Text style={styles.text}>What price did you or someone buy this for?</Text>
+        <NumericalInput title="Original price"> </NumericalInput>
+       
+        <Text style={styles.text}>What price do you want to sell this for?</Text>
+        <NumericalInput title="Listing price"> </NumericalInput>
         <Text style={styles.text}>Brand</Text>
         <TextInputExample title="Nordstrom Rack"> </TextInputExample>
 
@@ -73,8 +71,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingHorizontal: 15,
   }, 
-  descriptionText: { 
-    marginBottom: 5, marginLeft: 3
+
+  topmostText: {
+    marginBottom: 5, marginLeft: 3, marginTop: 10
   }
 
   

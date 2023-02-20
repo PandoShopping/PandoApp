@@ -28,20 +28,29 @@ export default function Button({ label, theme, onPress}) {
     return (
       <View
       style={[styles.buttonContainer2]}
+
       // { borderWidth: 4, borderColor: "#ffd33d", borderRadius: 18 }
       >
         <Pressable
           style={[styles.button, { backgroundColor: "#fff" }]}
           onPress={onPress}
         >
-          <FontAwesome
+             <FontAwesome
             name="picture-o"
             size={18}
             color="#25292e"
             style={styles.buttonIcon}
           />
-          <Text style={[styles.buttonLabel, { color: "#25292e" }]}>{label}</Text>
+
+          <Text style={[styles.primaryButtonLabel]}>New image</Text>
+
+
+          <Text style={[styles.secondaryButtonLabel]}>{label}</Text>
+
+       
+
         </Pressable>
+
     </View>
     );
   } 
@@ -67,12 +76,12 @@ const styles = StyleSheet.create({
     padding: 3,
   },
   buttonContainer2: {
-    width: 330,
-    height: 440,
+    width: 360,
+    height: 300,
     borderRadius: 18,
     backgroundColor: 'fff',
     padding: 3,
-    
+ 
   },
   button: {
     borderRadius: 50,
@@ -80,13 +89,24 @@ const styles = StyleSheet.create({
     height: '100%',
     alignItems: 'center',
     justifyContent: 'center',
-    flexDirection: 'row',
+  flexDirection: 'row',
   },
   buttonIcon: {
-    paddingRight: 10,
+    padding: 15,
   },
-  buttonLabel: {
-    color: '#fff',
+  primaryButtonLabel: {
+    color: "#25292e",
+    fontSize: 16,
+    textAlign: "center",
+    fontFamily: "Avenir-Medium",
+    // fontWeight: "medium", 
+  },
+  secondaryButtonLabel: {
+    padding: 15,
+    color: "gray",
     fontSize: 14,
-  },
+    textAlign: "center",
+    fontFamily: "Avenir-Medium",
+
+  }
 });
