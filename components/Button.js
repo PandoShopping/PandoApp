@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     padding: 3,
   },
   buttonContainer2: {
-    width: 320,
+    width: 330,
     height: 440,
     borderRadius: 18,
     backgroundColor: 'fff',

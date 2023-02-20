@@ -8,6 +8,8 @@ import * as ImagePicker from 'expo-image-picker';
 const AddImage = () => {
 
 	const [selectedImage, setSelectedImage] = useState(null); 
+  const [isImageSeleected, setIsImageSelected] = useState(false); 
+
   const pickImageAsync = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
       allowsEditing: true, 
@@ -16,27 +18,31 @@ const AddImage = () => {
 
     if (!result.canceled) {
       setSelectedImage(result.assets[0].uri); 
+      setIsImageSelected(true); 
     } else {
       alert('Please select or take a photo of your product!');
     }
   };
 
-  return (
-	<View style={{ flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: '#F5F7FA'}}>
-	{/* comment copy paste */}
-	<View style={styles.imageContainer}>
-         <ImageViewer 
-           placeholderImageSource={placeholderImage} 
-           selectedImage={selectedImage}
-         />
+  if (isImageSeleected === true) { 
+      return (
+        <View style={{ flex: 1, alignItems: "center", justifyContent: "center"}}>
+        <View style={styles.imageContainer}>
+               <ImageViewer 
+                 placeholderImageSource={placeholderImage} 
+                 selectedImage={selectedImage}
+               />
+             </View>
+        </View>
+      )
+  }
 
-         
-       </View>
+  return (
+   
+	<View style={{ flex: 1, alignItems: "center", justifyContent: "center"}}>
 	   <View style ={styles.footerContainer}>
        {/*TODO: add camera */}
-         <Button theme="primary" label="Take a photo"/>
-         <Button theme="primary" label="Choose a photo" onPress={pickImageAsync}/>
-         <Button theme="bigAss" label="choose 4" onPress={pickImageAsync}/>
+         <Button theme="bigAss" label="Choose Image" onPress={pickImageAsync}/>
        </View>
 
 	</View>
@@ -47,7 +53,7 @@ const AddImage = () => {
 const styles = StyleSheet.create({
 	imageContainer: {
 	  flex: 1,
-	  paddingTop: 58,
+	  paddingTop: 100,
 	},
 	image: {
 	  width: 320,

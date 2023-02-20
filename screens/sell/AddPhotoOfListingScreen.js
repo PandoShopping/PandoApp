@@ -1,3 +1,6 @@
+// DEPRICATED --> GO TO AddImage.js
+
+
 import React from "react";
 import { Text, View, StyleSheet } from "react-native";
 import * as ImagePicker from 'expo-image-picker';
