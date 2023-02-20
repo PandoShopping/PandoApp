@@ -28,14 +28,14 @@ export default function Button({ label, theme, onPress}) {
     return (
       <View
       style={[styles.buttonContainer2]}
-
-      // { borderWidth: 4, borderColor: "#ffd33d", borderRadius: 18 }
       >
         <Pressable
           style={[styles.button, { backgroundColor: "#fff" }]}
           onPress={onPress}
         > 
         {/* random shit */}
+                {/* random shit */}
+
              <FontAwesome
             name="picture-o"
             size={18}
