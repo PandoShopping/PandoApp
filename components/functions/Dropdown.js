@@ -24,6 +24,7 @@ const MultiSelectComponent = () => {
         labelField="label"
         valueField="value"
         placeholder="Select item"
+        
         value={selected}
         onChange={item => {
           setSelected(item);
@@ -31,9 +32,9 @@ const MultiSelectComponent = () => {
         renderLeftIcon={() => (
           <Shirt
             style={styles.icon}
-            color="black"
+            color="gray"
             name="shirt-outline"
-            size={20}
+            size={18}
           />
         )}
         selectedStyle={styles.selectedStyle}
@@ -58,6 +59,10 @@ const styles = StyleSheet.create({
   placeholderStyle: {
     fontSize: 15,
     marginLeft: 5,
+    color: "gray",
+    fontFamily: "Avenir-Book",
+    fontSize: 14,
+
 
   },
   selectedTextStyle: {
@@ -68,16 +73,11 @@ const styles = StyleSheet.create({
     height: 20,
 
   },
-  // inputSearchStyle: {
-  //   height: 40,
-  //   fontSize: 16,
-  // },
   icon: {
     marginRight: 5,
   },
   selectedStyle: {
     borderRadius: 30,
     
-  //  backgroundColor: '#F3EDF6',
   },
 });

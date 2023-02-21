@@ -35,6 +35,8 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 30,
     backgroundColor: 'white',
+    fontFamily: "Avenir-Book",
+    fontSize: 14 
   },
 });
 

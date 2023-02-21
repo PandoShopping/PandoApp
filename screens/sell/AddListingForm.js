@@ -59,24 +59,25 @@ const styles = StyleSheet.create({
   alignItems: 'center',
   justifyContent: 'center',
   paddingHorizontal: 15,
+  fontSize: 14,
 
   text: {
     marginTop: 10,
     marginBottom: 5,
     marginLeft: 3,
+    fontFamily: "Avenir-Medium",
   }, 
+
+  topmostText: {
+    marginBottom: 5, marginLeft: 3, marginTop: 14,
+    fontFamily: "Avenir-Medium",
+  },
+
   backgroundView: { 
-    flex: 1,
     alignItems: 'left',
     justifyContent: 'center',
     paddingHorizontal: 15,
   }, 
-
-  topmostText: {
-    marginBottom: 5, marginLeft: 3, marginTop: 10
-  }
-
-  
 });
 
 
