@@ -2,7 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View} from "react-native";
 import { CurrentRenderContext, NavigationContainer } from '@react-navigation/native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import { ProfileHomeScreen, MyListingsScreen, AddPhotoOfListingScreen } from "./screens"
+import { ProfileHomeScreen, MyListingsScreen, AddPhotoOfListingScreen, AddListingScreen} from "./screens"
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import { Amplify } from 'aws-amplify'
 import awsmobile from './src/aws-exports'
