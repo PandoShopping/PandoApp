@@ -2,11 +2,13 @@ import React from "react";
 import { Text, View, StyleSheet, SafeAreaView } from "react-native";
 import { Button, ImageViewer, TestDisplayAllListings } from '../../components'; 
 import TestAddListingForm from "../../components/TestAddListingForm";
+import AddListingForm from "../../components/AddListingForm"
+
 
 const AddListingScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
-    <TestAddListingForm/> 
+    <AddListingForm/> 
    </SafeAreaView>
   ); 
 } 

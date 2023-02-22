@@ -1,7 +1,6 @@
 import React from "react";
 import { Text, View, StyleSheet, SafeAreaView, ScrollView } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import AddListingForm from "./AddListingForm.js";
 import AddImage from "../../components/functions/AddImage.js";
 
 const MyListingsScreen = () => {
@@ -10,7 +9,6 @@ return (
   <ScrollView>
     <Text style={styles.text}>Create new listing</Text>
 	  <AddImage />
-	  <AddListingForm />   
   </ScrollView>
 </SafeAreaView>
 );
