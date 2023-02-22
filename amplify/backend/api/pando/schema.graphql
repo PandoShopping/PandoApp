@@ -14,13 +14,13 @@ type User @model @auth(rules: [{ allow: owner }]){
   listings: [Listing!] 
 }
 
+
 type Listing @model @auth(rules: [
   { allow: public, operations: [read]},
   { allow: owner }
 ]) { 
   id: ID!
   name: String!
-  storeName: String! 
   description: String
   category: ListingCategory
   price: Float!
@@ -59,4 +59,3 @@ enum ListingGender {
   FEMALE 
   OTHER
 }
-

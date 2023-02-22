@@ -23,14 +23,12 @@ const Tab = createMaterialBottomTabNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator initialRouteName="Profile">
-      <Tab.Screen name="Shop" component={BrowseListingsScreen} />
-      <Tab.Screen name="Sell" component={MyListingsScreen} />
+      <Tab.Screen name="Shop" component={AddPhotoOfListingScreen} />
+      <Tab.Screen name="Sell" component={AddListingScreen} />
       <Tab.Screen name="Profile" component={ProfileHomeScreen} />
     </Tab.Navigator>
   );
 }
-
-
 
 const MyAppHeader = () => {
   const {
@@ -54,32 +52,13 @@ const styles = StyleSheet.create({
 
 function App() {
   return (  
-    
- 
    <NavigationContainer >
    <MyTabs />
- <StatusBar style="auto" />
+  <StatusBar style="auto" />
  
  </NavigationContainer>
    );
  }
-
-
-
-/*const MySectionHeader = Object.assign({}, AmplifyTheme.sectionHeader, {backgroundColor: 'white'} );
-const sectionHeaderTextMod = Object.assign({}, AmplifyTheme.sectionHeaderText, {fontSize: 25});
-const buttonAvailable = Object.assign({}, AmplifyTheme.button, {backgroundColor: '#156FD7', borderRadius: 8} );
-const buttonResting = Object.assign({}, AmplifyTheme.buttonDisabled, {backgroundColor: '#A8C9F0', borderRadius: 8});
-const sectionFooterLinkMod = Object.assign({}, AmplifyTheme.sectionFooterLink, {color: 'black'});
-const MyTheme = Object.assign({}, AmplifyTheme, { 
-  sectionHeader: MySectionHeader, 
-  button: buttonAvailable,
-  buttonDisabled: buttonResting,
-  sectionFooterLink: sectionFooterLinkMod,
-  sectionHeaderText: sectionHeaderTextMod,
-
-});
-<withAuthenticator theme={MyTheme} />*/
 
 const customTheme = {
   ...AmplifyTheme,

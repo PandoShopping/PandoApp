@@ -6,7 +6,6 @@ import { Text, View, StyleSheet } from "react-native";
 import * as ImagePicker from 'expo-image-picker';
 import { Button, ImageViewer } from '../../components'; 
 import { placeholderImage } from "../../constants";
-
 import { useState } from 'react'; 
 
 const AddPhotoOfListingScreen = () => {
