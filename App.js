@@ -2,14 +2,12 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View} from "react-native";
 import { CurrentRenderContext, NavigationContainer } from '@react-navigation/native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import { ProfileHomeScreen, MyListingsScreen, AddPhotoOfListingScreen, AddListingScreen} from "./screens"
+import { ProfileHomeScreen, AddListingScreen, BrowseListingsScreen} from "./screens"
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import { Amplify } from 'aws-amplify'
 import awsmobile from './src/aws-exports'
 import { withAuthenticator, SignIn, ConfirmSignUp, ConfirmSignIn, ForgotPassword } from 'aws-amplify-react-native';
 import { AmplifyTheme } from 'aws-amplify-react-native';
-import BrowseListingsScreen from "./screens/shop/BrowseListingsScreen"
-
 
 Amplify.configure({
   ...awsmobile,
@@ -23,7 +21,7 @@ const Tab = createMaterialBottomTabNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator initialRouteName="Profile">
-      <Tab.Screen name="Shop" component={AddPhotoOfListingScreen} />
+      <Tab.Screen name="Shop" component={BrowseListingsScreen} />
       <Tab.Screen name="Sell" component={AddListingScreen} />
       <Tab.Screen name="Profile" component={ProfileHomeScreen} />
     </Tab.Navigator>

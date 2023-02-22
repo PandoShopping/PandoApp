@@ -3,12 +3,12 @@ import React, { useState, useEffect, Component } from 'react';
 import { Text, View, TextInput, Keyboard, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
 import FloatLabelTextInput from 'react-native-floating-label-text-input';
-import TextInputExample from './functions/TextInputExample';
-import DropdownGender from './functions/DropdownGender';
-import Dropdown from './functions/Dropdown'; 
-import NumericalInput from './functions/NumericalInput';
-import DropdownSize from './functions/DropdownSize';
-import MultilineTextInput from './functions/MultilineTextInput';
+import TextInputExample from './TextInputExample';
+import DropdownGender from './DropdownGender';
+import Dropdown from './Dropdown'; 
+import NumericalInput from './NumericalInput';
+import DropdownSize from './DropdownSize';
+import MultilineTextInput from './MultilineTextInput';
 
 
 const AddListingForm = () => {

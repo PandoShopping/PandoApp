@@ -1,8 +1,8 @@
 import { React, useState } from "react";
 import { Text, View, StyleSheet } from "react-native";
-import ImageViewer from "../../components/ImageViewer"
-import { placeholderImage } from "../../constants";
-import { Button } from '../../components';
+import ImageViewer from "./ImageViewer"
+import { placeholderImage } from "../constants";
+import { Button } from '.';
 import * as ImagePicker from 'expo-image-picker';
 
 const AddImage = () => {
