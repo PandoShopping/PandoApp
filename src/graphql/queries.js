@@ -1,50 +1,111 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getTodo = /* GraphQL */ `
-  query GetTodo($id: ID!) {
-    getTodo(id: $id) {
+export const getUser = /* GraphQL */ `
+  query GetUser($id: ID!) {
+    getUser(id: $id) {
       id
-      name
-      description
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const listTodos = /* GraphQL */ `
-  query ListTodos(
-    $filter: ModelTodoFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listTodos(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
+      username
+      contactMethods
+      profilePicture
+      locationPermissionsEnabled
+      location
+      hasShop
+      listings {
         id
         name
+        storeName
         description
+        category
+        price
+        ogPrice
+        brand
+        size
+        gender
+        isPurchased
+        owner {
+          id
+          username
+          contactMethods
+          profilePicture
+          locationPermissionsEnabled
+          location
+          hasShop
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          owner
+        }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
       }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+    }
+  }
+`;
+export const listUsers = /* GraphQL */ `
+  query ListUsers(
+    $filter: ModelUserFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        username
+        contactMethods
+        profilePicture
+        locationPermissionsEnabled
+        location
+        hasShop
+        listings {
+          id
+          name
+          storeName
+          description
+          category
+          price
+          ogPrice
+          brand
+          size
+          gender
+          isPurchased
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+      }
       nextToken
       startedAt
     }
   }
 `;
-export const syncTodos = /* GraphQL */ `
-  query SyncTodos(
-    $filter: ModelTodoFilterInput
+export const syncUsers = /* GraphQL */ `
+  query SyncUsers(
+    $filter: ModelUserFilterInput
     $limit: Int
     $nextToken: String
     $lastSync: AWSTimestamp
   ) {
-    syncTodos(
+    syncUsers(
       filter: $filter
       limit: $limit
       nextToken: $nextToken
@@ -52,13 +113,36 @@ export const syncTodos = /* GraphQL */ `
     ) {
       items {
         id
-        name
-        description
+        username
+        contactMethods
+        profilePicture
+        locationPermissionsEnabled
+        location
+        hasShop
+        listings {
+          id
+          name
+          storeName
+          description
+          category
+          price
+          ogPrice
+          brand
+          size
+          gender
+          isPurchased
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
+        owner
       }
       nextToken
       startedAt
@@ -70,6 +154,7 @@ export const getListing = /* GraphQL */ `
     getListing(id: $id) {
       id
       name
+      storeName
       description
       category
       price
@@ -77,12 +162,45 @@ export const getListing = /* GraphQL */ `
       brand
       size
       gender
+      isPurchased
+      owner {
+        id
+        username
+        contactMethods
+        profilePicture
+        locationPermissionsEnabled
+        location
+        hasShop
+        listings {
+          id
+          name
+          storeName
+          description
+          category
+          price
+          ogPrice
+          brand
+          size
+          gender
+          isPurchased
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+      }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      owner
     }
   }
 `;
@@ -96,6 +214,7 @@ export const listListings = /* GraphQL */ `
       items {
         id
         name
+        storeName
         description
         category
         price
@@ -103,12 +222,27 @@ export const listListings = /* GraphQL */ `
         brand
         size
         gender
+        isPurchased
+        owner {
+          id
+          username
+          contactMethods
+          profilePicture
+          locationPermissionsEnabled
+          location
+          hasShop
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          owner
+        }
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        owner
       }
       nextToken
       startedAt
@@ -131,6 +265,7 @@ export const syncListings = /* GraphQL */ `
       items {
         id
         name
+        storeName
         description
         category
         price
@@ -138,6 +273,148 @@ export const syncListings = /* GraphQL */ `
         brand
         size
         gender
+        isPurchased
+        owner {
+          id
+          username
+          contactMethods
+          profilePicture
+          locationPermissionsEnabled
+          location
+          hasShop
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          owner
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getStore = /* GraphQL */ `
+  query GetStore($id: ID!) {
+    getStore(id: $id) {
+      id
+      storeName
+      user {
+        id
+        username
+        contactMethods
+        profilePicture
+        locationPermissionsEnabled
+        location
+        hasShop
+        listings {
+          id
+          name
+          storeName
+          description
+          category
+          price
+          ogPrice
+          brand
+          size
+          gender
+          isPurchased
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+    }
+  }
+`;
+export const listStores = /* GraphQL */ `
+  query ListStores(
+    $filter: ModelStoreFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listStores(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        storeName
+        user {
+          id
+          username
+          contactMethods
+          profilePicture
+          locationPermissionsEnabled
+          location
+          hasShop
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          owner
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncStores = /* GraphQL */ `
+  query SyncStores(
+    $filter: ModelStoreFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncStores(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        storeName
+        user {
+          id
+          username
+          contactMethods
+          profilePicture
+          locationPermissionsEnabled
+          location
+          hasShop
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          owner
+        }
         createdAt
         updatedAt
         _version

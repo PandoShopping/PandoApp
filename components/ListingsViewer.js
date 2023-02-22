@@ -1,11 +1,13 @@
 import React from 'react';
-import {Listing} from './Listing';
+import Listing from './Listing';
+import { Text, View, StyleSheet} from "react-native";
 
 const ListingsViewer = () => {
   const listingsToRender = [
     {
       id: 'test-01',
       name: "test1Name", 
+      storeName: "testStoreName", 
       description:
         'test1Description',
       category: 'test1Categroy', 
@@ -18,7 +20,8 @@ const ListingsViewer = () => {
     },
     {
       id: 'test-02',
-      name: "test2Name", 
+      name: "test2Name",
+      storeName: "testStoreName",  
       description:
         'test2Description',
       category: 'test2Categroy', 
@@ -33,11 +36,11 @@ const ListingsViewer = () => {
   ];
 
   return (
-    <div>
+    <View>
       {listingsToRender.map((listing) => (
-        <Listing id={link.id} name={link.name} description={link.description} category={link.category} price={link.price} ogPrice={link.ogPrice} brand={link.brand} size={link.size} gender={link.gender} isPurchased={link.isPurchased}/>
+        <Listing id={listing.id} name={listing.name} storeName={listing.storeName} description={listing.description} category={listing.category} price={listing.price} ogPrice={listing.ogPrice} brand={listing.brand} size={listing.size} gender={listing.gender} isPurchased={listing.isPurchased}/>
       ))}
-    </div>
+    </View>
   );
 };
 

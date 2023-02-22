@@ -1,9 +1,9 @@
 # This "input" configures a global authorization rule to enable public access to
 # all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
-input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
+#input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
 
 
-type User @model {
+type User @model @auth(rules: [{ allow: owner }]){
   id: ID!
   username: String!
   contactMethods: [String]
@@ -11,11 +11,11 @@ type User @model {
   locationPermissionsEnabled: Boolean!
   location: String
   hasShop: Boolean  
-  listings: [Listing!] @relation
+  listings: [Listing!] 
 }
 
 type Listing @model @auth(rules: [
-  { allow: private,  provider: iam, operations: [read]},
+  { allow: public, operations: [read]},
   { allow: owner }
 ]) { 
   id: ID!
@@ -29,10 +29,11 @@ type Listing @model @auth(rules: [
   size: ListingSize
   gender: ListingGender
   isPurchased: Boolean!
+  owner: User!
 }
 
 type Store @model @auth(rules: [
-  { allow: private,  provider: iam, operations: [read]},
+  { allow: private, operations: [read]},
   { allow: owner }
 ]) { 
   id: ID!
