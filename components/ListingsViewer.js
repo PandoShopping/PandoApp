@@ -5,6 +5,21 @@ import { Text, View, StyleSheet} from "react-native";
 const ListingsViewer = () => {
   const listingsToRender = [
     {
+      id: 'test-00',
+      name: "Oversized Seattle Crew Neck Sweater", 
+      storeName: "testStoreName", 
+      description:
+        'test1Description',
+      category: 'Clothing', 
+      price: '$30', 
+      ogPrice: '$44.95', 
+      brand: 'Garage Clothing', 
+      size: 'M', 
+      gender: 'Womens', 
+      isPurchased: 'No'
+    },
+
+      {
       id: 'test-01',
       name: "test1Name", 
       storeName: "testStoreName", 
@@ -18,6 +33,21 @@ const ListingsViewer = () => {
       gender: 'test1Gender', 
       isPurchased: 'test1IsPurchased'
     },
+
+    // {
+    //   id: 'test-01',
+    //   name: "test1Name", 
+    //   storeName: "testStoreName", 
+    //   description:
+    //     'test1Description',
+    //   category: 'test1Categroy', 
+    //   price: 'test1Price', 
+    //   ogPrice: 'test1OgPrice', 
+    //   brand: 'test1Brand', 
+    //   size: 'test1Size', 
+    //   gender: 'test1Gender', 
+    //   isPurchased: 'test1IsPurchased'
+    // },
     // {
     //   id: 'test-02',
     //   name: "test2Name",

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { MultiSelect } from 'react-native-element-dropdown';
 import Resize from 'react-native-vector-icons/Ionicons';
-import {COLORS} from '../constants/theme'
+import {COLORS, FONTS} from '../constants/theme'
 
 
 const data = [
@@ -43,7 +43,7 @@ const MultiSelectComponent = () => {
         renderLeftIcon={() => (
           <Resize
             style={styles.icon}
-            color="gray"
+            color= {COLORS.textSecondary}
             name="resize"
             size={18}
           />
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
   placeholderStyle: {
     fontSize: 15,
     marginLeft: 5,
-    color: "gray",
+    color: COLORS.textSecondary,
     fontFamily: "Avenir-Book",
     fontSize: 14 
 

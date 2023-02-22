@@ -20,7 +20,9 @@ const Tab = createMaterialBottomTabNavigator();
 
 function MyTabs() {
   return (
-    <Tab.Navigator initialRouteName="Profile">
+    <Tab.Navigator initialRouteName="Sell"
+    barStyle={{ backgroundColor: 'white'}}
+    >
       <Tab.Screen name="Shop" component={BrowseListingsScreen} />
       <Tab.Screen name="Sell" component={AddListingScreen} />
       <Tab.Screen name="Profile" component={ProfileHomeScreen} />

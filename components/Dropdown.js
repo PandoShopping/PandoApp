@@ -33,7 +33,7 @@ const MultiSelectComponent = () => {
         renderLeftIcon={() => (
           <Shirt
             style={styles.icon}
-            color="gray"
+            color= {COLORS.textSecondary}
             name="shirt-outline"
             size={18}
           />
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
   placeholderStyle: {
     fontSize: 15,
     marginLeft: 5,
-    color: "gray",
+    color: COLORS.textSecondary,
     fontFamily: "Avenir-Book",
     fontSize: 14,
 

@@ -1,6 +1,9 @@
 export const COLORS = {
   //button and fields background colors
-  buttonPrimary: "#F2F5FC",
+  buttonPrimary: "#F1F5F9",
+
+  textPrimary: "black",
+  textSecondary: "gray"
 
 };
 
@@ -14,11 +17,12 @@ export const SIZES = {
 };
 
 export const FONTS = {
-  bold: "InterBold",
-  semiBold: "InterSemiBold",
-  medium: "InterMedium",
-  regular: "InterRegular",
-  light: "InterLight",
+  //all avenir
+  extraBold: "Avenir-Black",
+  bold: "Avenir-Heavy",
+  medium: "Avenir-Medium",
+  regular: "Avenir-Book",
+  light: "Avenir-Light",
 };
 
 export const SHADOWS = {
