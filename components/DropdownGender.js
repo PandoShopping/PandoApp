@@ -24,7 +24,7 @@ const MultiSelectComponent = () => {
         data={data}
         labelField="label"
         valueField="value"
-        placeholder="Select item"
+        placeholder="Select gender"
         value={selected}
         onChange={item => {
           setSelected(item);
@@ -32,9 +32,9 @@ const MultiSelectComponent = () => {
         renderLeftIcon={() => (
           <PersonOutline
             style={styles.icon}
-            color="black"
+            color="gray"
             name="person-outline"
-            size={20}
+            size={18}
           />
         )}
         selectedStyle={styles.selectedStyle}
@@ -59,7 +59,9 @@ const styles = StyleSheet.create({
   placeholderStyle: {
     fontSize: 15,
     marginLeft: 5,
-
+    color: "gray",
+    fontFamily: "Avenir-Book",
+    fontSize: 14 
   },
   selectedTextStyle: {
     fontSize: 14,

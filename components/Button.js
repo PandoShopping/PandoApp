@@ -1,15 +1,16 @@
-import { StyleSheet, View, Pressable, Text } from 'react-native';
+import { StyleSheet, View, Pressable, Text, Image } from 'react-native';
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { VStack } from '@react-native-material/core';
+
 
 export default function Button({ label, theme, onPress}) {
   if (theme === "primary") { 
     return (
       <View
-      style={[styles.buttonContainer,]}
-      // { borderWidth: 4, borderColor: "#ffd33d", borderRadius: 18 }
+      style={[styles.buttonContainer]}
       >
         <Pressable
-          style={[styles.button, { backgroundColor: "#fff" }]}
+          style={[styles.button, {  }]}
           onPress={onPress}
         >
           <FontAwesome
@@ -18,7 +19,8 @@ export default function Button({ label, theme, onPress}) {
             color="#25292e"
             style={styles.buttonIcon}
           />
-          <Text style={[styles.buttonLabel, { color: "#25292e" }]}>{label}</Text>
+          
+          <Text style={[styles.buttonLabel]}>{label}</Text>
         </Pressable>
     </View>
     );
@@ -26,31 +28,15 @@ export default function Button({ label, theme, onPress}) {
 
   else if (theme === "bigAss") { 
     return (
-      <View
-      style={[styles.buttonContainer2]}
-
-      // { borderWidth: 4, borderColor: "#ffd33d", borderRadius: 18 }
-      >
-        <Pressable
-          style={[styles.button, { backgroundColor: "#fff" }]}
-          onPress={onPress}
-        >
-             <FontAwesome
-            name="picture-o"
-            size={18}
-            color="#25292e"
-            style={styles.buttonIcon}
-          />
-
-          <Text style={[styles.primaryButtonLabel]}>New image</Text>
-
-
-          <Text style={[styles.secondaryButtonLabel]}>{label}</Text>
-
-       
-
-        </Pressable>
-
+      <View style={[styles.biggerButtonContainer]}>
+        <Pressable style={[styles.button, { backgroundColor: "#fff" }]} onPress={onPress} > 
+              <VStack spacing ={5} style = {{alignItems: "center"}} > 
+              <Image style={{width: 180, height: 136}} source={require("./../assets/images/megacreator.png")} />
+               <Text style={[styles.primaryButtonLabel]}>New image</Text>
+                <Text style={[styles.secondaryButtonLabel]}>{label}
+                </Text>
+                </VStack>
+           </Pressable>
     </View>
     );
   } 
@@ -75,14 +61,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 3,
   },
-  buttonContainer2: {
+
+  biggerButtonContainer: {
     width: 360,
     height: 300,
-    borderRadius: 18,
-    backgroundColor: 'fff',
-    padding: 3,
- 
+    backgroundColor: 'fff', 
   },
+
   button: {
     borderRadius: 50,
     width: '100%',
@@ -90,23 +75,27 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   flexDirection: 'row',
+  backgroundColor: "#fff"
+
   },
-  buttonIcon: {
-    padding: 15,
-  },
+ 
   primaryButtonLabel: {
+    paddingTop: 30,
     color: "#25292e",
-    fontSize: 16,
-    textAlign: "center",
-    fontFamily: "Avenir-Medium",
-    // fontWeight: "medium", 
+    fontSize: 18,
+    fontFamily: "Avenir-Heavy",
   },
+
   secondaryButtonLabel: {
-    padding: 15,
     color: "gray",
     fontSize: 14,
     textAlign: "center",
     fontFamily: "Avenir-Medium",
 
-  }
+  },
+
+  buttonIcon: {
+    paddingRight: 10,
+  }, //don't delete this
+
 });

@@ -35,7 +35,7 @@ const MultiSelectComponent = () => {
         data={data}
         labelField="label"
         valueField="value"
-        placeholder="Select item"
+        placeholder="Select size labels"
         value={selected}
         onChange={item => {
           setSelected(item);
@@ -43,9 +43,9 @@ const MultiSelectComponent = () => {
         renderLeftIcon={() => (
           <Resize
             style={styles.icon}
-            color="black"
+            color="gray"
             name="resize"
-            size={20}
+            size={18}
           />
         )}
         selectedStyle={styles.selectedStyle}
@@ -70,6 +70,9 @@ const styles = StyleSheet.create({
   placeholderStyle: {
     fontSize: 15,
     marginLeft: 5,
+    color: "gray",
+    fontFamily: "Avenir-Book",
+    fontSize: 14 
 
   },
   selectedTextStyle: {

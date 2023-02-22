@@ -1,8 +1,7 @@
 import { FormField } from 'aws-amplify-react-native';
 import React, { useState, useEffect, Component } from 'react';
 import { Text, View, TextInput, Keyboard, StyleSheet, TouchableWithoutFeedback } from 'react-native';
-import DropDownPicker from 'react-native-dropdown-picker';
-import FloatLabelTextInput from 'react-native-floating-label-text-input';
+
 import TextInputExample from './TextInputExample';
 import DropdownGender from './DropdownGender';
 import Dropdown from './Dropdown'; 

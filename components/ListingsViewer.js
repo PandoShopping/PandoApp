@@ -18,21 +18,21 @@ const ListingsViewer = () => {
       gender: 'test1Gender', 
       isPurchased: 'test1IsPurchased'
     },
-    {
-      id: 'test-02',
-      name: "test2Name",
-      storeName: "testStoreName",  
-      description:
-        'test2Description',
-      category: 'test2Categroy', 
-      price: 'test2Price', 
-      ogPrice: 'test2gPrice', 
-      brand: 'test2Brand', 
-      size: 'test2Size', 
-      gender: 'test2Gender', 
-      isPurchased: 'test2IsPurchased'
-      //TODO: chnage this to actual data that can be formatted in UI 
-    }
+    // {
+    //   id: 'test-02',
+    //   name: "test2Name",
+    //   storeName: "testStoreName",  
+    //   description:
+    //     'test2Description',
+    //   category: 'test2Categroy', 
+    //   price: 'test2Price', 
+    //   ogPrice: 'test2gPrice', 
+    //   brand: 'test2Brand', 
+    //   size: 'test2Size', 
+    //   gender: 'test2Gender', 
+    //   isPurchased: 'test2IsPurchased'
+    //   //TODO: chnage this to actual data that can be formatted in UI 
+    // }
   ];
 
   return (
