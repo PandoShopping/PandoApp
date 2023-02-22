@@ -1,45 +1,168 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateTodo = /* GraphQL */ `
-  subscription OnCreateTodo($filter: ModelSubscriptionTodoFilterInput) {
-    onCreateTodo(filter: $filter) {
+export const onCreateUser = /* GraphQL */ `
+  subscription OnCreateUser(
+    $filter: ModelSubscriptionUserFilterInput
+    $owner: String
+  ) {
+    onCreateUser(filter: $filter, owner: $owner) {
       id
-      name
-      description
+      username
+      contactMethods
+      profilePicture
+      locationPermissionsEnabled
+      location
+      hasShop
+      listings {
+        id
+        name
+        storeName
+        description
+        category
+        price
+        ogPrice
+        brand
+        size
+        gender
+        isPurchased
+        owner {
+          id
+          username
+          contactMethods
+          profilePicture
+          locationPermissionsEnabled
+          location
+          hasShop
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          owner
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
+      owner
     }
   }
 `;
-export const onUpdateTodo = /* GraphQL */ `
-  subscription OnUpdateTodo($filter: ModelSubscriptionTodoFilterInput) {
-    onUpdateTodo(filter: $filter) {
+export const onUpdateUser = /* GraphQL */ `
+  subscription OnUpdateUser(
+    $filter: ModelSubscriptionUserFilterInput
+    $owner: String
+  ) {
+    onUpdateUser(filter: $filter, owner: $owner) {
       id
-      name
-      description
+      username
+      contactMethods
+      profilePicture
+      locationPermissionsEnabled
+      location
+      hasShop
+      listings {
+        id
+        name
+        storeName
+        description
+        category
+        price
+        ogPrice
+        brand
+        size
+        gender
+        isPurchased
+        owner {
+          id
+          username
+          contactMethods
+          profilePicture
+          locationPermissionsEnabled
+          location
+          hasShop
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          owner
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
+      owner
     }
   }
 `;
-export const onDeleteTodo = /* GraphQL */ `
-  subscription OnDeleteTodo($filter: ModelSubscriptionTodoFilterInput) {
-    onDeleteTodo(filter: $filter) {
+export const onDeleteUser = /* GraphQL */ `
+  subscription OnDeleteUser(
+    $filter: ModelSubscriptionUserFilterInput
+    $owner: String
+  ) {
+    onDeleteUser(filter: $filter, owner: $owner) {
       id
-      name
-      description
+      username
+      contactMethods
+      profilePicture
+      locationPermissionsEnabled
+      location
+      hasShop
+      listings {
+        id
+        name
+        storeName
+        description
+        category
+        price
+        ogPrice
+        brand
+        size
+        gender
+        isPurchased
+        owner {
+          id
+          username
+          contactMethods
+          profilePicture
+          locationPermissionsEnabled
+          location
+          hasShop
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          owner
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
+      owner
     }
   }
 `;
@@ -51,6 +174,7 @@ export const onCreateListing = /* GraphQL */ `
     onCreateListing(filter: $filter, owner: $owner) {
       id
       name
+      storeName
       description
       category
       price
@@ -58,12 +182,45 @@ export const onCreateListing = /* GraphQL */ `
       brand
       size
       gender
+      isPurchased
+      owner {
+        id
+        username
+        contactMethods
+        profilePicture
+        locationPermissionsEnabled
+        location
+        hasShop
+        listings {
+          id
+          name
+          storeName
+          description
+          category
+          price
+          ogPrice
+          brand
+          size
+          gender
+          isPurchased
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+      }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      owner
     }
   }
 `;
@@ -75,6 +232,7 @@ export const onUpdateListing = /* GraphQL */ `
     onUpdateListing(filter: $filter, owner: $owner) {
       id
       name
+      storeName
       description
       category
       price
@@ -82,12 +240,45 @@ export const onUpdateListing = /* GraphQL */ `
       brand
       size
       gender
+      isPurchased
+      owner {
+        id
+        username
+        contactMethods
+        profilePicture
+        locationPermissionsEnabled
+        location
+        hasShop
+        listings {
+          id
+          name
+          storeName
+          description
+          category
+          price
+          ogPrice
+          brand
+          size
+          gender
+          isPurchased
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+      }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      owner
     }
   }
 `;
@@ -99,6 +290,7 @@ export const onDeleteListing = /* GraphQL */ `
     onDeleteListing(filter: $filter, owner: $owner) {
       id
       name
+      storeName
       description
       category
       price
@@ -106,6 +298,189 @@ export const onDeleteListing = /* GraphQL */ `
       brand
       size
       gender
+      isPurchased
+      owner {
+        id
+        username
+        contactMethods
+        profilePicture
+        locationPermissionsEnabled
+        location
+        hasShop
+        listings {
+          id
+          name
+          storeName
+          description
+          category
+          price
+          ogPrice
+          brand
+          size
+          gender
+          isPurchased
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onCreateStore = /* GraphQL */ `
+  subscription OnCreateStore(
+    $filter: ModelSubscriptionStoreFilterInput
+    $owner: String
+  ) {
+    onCreateStore(filter: $filter, owner: $owner) {
+      id
+      storeName
+      user {
+        id
+        username
+        contactMethods
+        profilePicture
+        locationPermissionsEnabled
+        location
+        hasShop
+        listings {
+          id
+          name
+          storeName
+          description
+          category
+          price
+          ogPrice
+          brand
+          size
+          gender
+          isPurchased
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+    }
+  }
+`;
+export const onUpdateStore = /* GraphQL */ `
+  subscription OnUpdateStore(
+    $filter: ModelSubscriptionStoreFilterInput
+    $owner: String
+  ) {
+    onUpdateStore(filter: $filter, owner: $owner) {
+      id
+      storeName
+      user {
+        id
+        username
+        contactMethods
+        profilePicture
+        locationPermissionsEnabled
+        location
+        hasShop
+        listings {
+          id
+          name
+          storeName
+          description
+          category
+          price
+          ogPrice
+          brand
+          size
+          gender
+          isPurchased
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+    }
+  }
+`;
+export const onDeleteStore = /* GraphQL */ `
+  subscription OnDeleteStore(
+    $filter: ModelSubscriptionStoreFilterInput
+    $owner: String
+  ) {
+    onDeleteStore(filter: $filter, owner: $owner) {
+      id
+      storeName
+      user {
+        id
+        username
+        contactMethods
+        profilePicture
+        locationPermissionsEnabled
+        location
+        hasShop
+        listings {
+          id
+          name
+          storeName
+          description
+          category
+          price
+          ogPrice
+          brand
+          size
+          gender
+          isPurchased
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+      }
       createdAt
       updatedAt
       _version

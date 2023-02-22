@@ -23,34 +23,42 @@ export enum ListingGender {
 
 
 
-type EagerTodo = {
+type EagerUser = {
   readonly [__modelMeta__]: {
-    identifier: ManagedIdentifier<Todo, 'id'>;
+    identifier: ManagedIdentifier<User, 'id'>;
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
   readonly id: string;
-  readonly name: string;
-  readonly description?: string | null;
+  readonly username: string;
+  readonly contactMethods?: (string | null)[] | null;
+  readonly profilePicture?: string | null;
+  readonly locationPermissionsEnabled: boolean;
+  readonly location?: string | null;
+  readonly hasShop?: boolean | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
 
-type LazyTodo = {
+type LazyUser = {
   readonly [__modelMeta__]: {
-    identifier: ManagedIdentifier<Todo, 'id'>;
+    identifier: ManagedIdentifier<User, 'id'>;
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
   readonly id: string;
-  readonly name: string;
-  readonly description?: string | null;
+  readonly username: string;
+  readonly contactMethods?: (string | null)[] | null;
+  readonly profilePicture?: string | null;
+  readonly locationPermissionsEnabled: boolean;
+  readonly location?: string | null;
+  readonly hasShop?: boolean | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
 
-export declare type Todo = LazyLoading extends LazyLoadingDisabled ? EagerTodo : LazyTodo
+export declare type User = LazyLoading extends LazyLoadingDisabled ? EagerUser : LazyUser
 
-export declare const Todo: (new (init: ModelInit<Todo>) => Todo) & {
-  copyOf(source: Todo, mutator: (draft: MutableModel<Todo>) => MutableModel<Todo> | void): Todo;
+export declare const User: (new (init: ModelInit<User>) => User) & {
+  copyOf(source: User, mutator: (draft: MutableModel<User>) => MutableModel<User> | void): User;
 }
 
 type EagerListing = {
@@ -60,6 +68,7 @@ type EagerListing = {
   };
   readonly id: string;
   readonly name: string;
+  readonly storeName: string;
   readonly description?: string | null;
   readonly category?: ListingCategory | keyof typeof ListingCategory | null;
   readonly price: number;
@@ -67,6 +76,7 @@ type EagerListing = {
   readonly brand: string;
   readonly size?: ListingSize | keyof typeof ListingSize | null;
   readonly gender?: ListingGender | keyof typeof ListingGender | null;
+  readonly isPurchased: boolean;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -78,6 +88,7 @@ type LazyListing = {
   };
   readonly id: string;
   readonly name: string;
+  readonly storeName: string;
   readonly description?: string | null;
   readonly category?: ListingCategory | keyof typeof ListingCategory | null;
   readonly price: number;
@@ -85,6 +96,7 @@ type LazyListing = {
   readonly brand: string;
   readonly size?: ListingSize | keyof typeof ListingSize | null;
   readonly gender?: ListingGender | keyof typeof ListingGender | null;
+  readonly isPurchased: boolean;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -93,4 +105,32 @@ export declare type Listing = LazyLoading extends LazyLoadingDisabled ? EagerLis
 
 export declare const Listing: (new (init: ModelInit<Listing>) => Listing) & {
   copyOf(source: Listing, mutator: (draft: MutableModel<Listing>) => MutableModel<Listing> | void): Listing;
+}
+
+type EagerStore = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Store, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly storeName: string;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+type LazyStore = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Store, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly storeName: string;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+export declare type Store = LazyLoading extends LazyLoadingDisabled ? EagerStore : LazyStore
+
+export declare const Store: (new (init: ModelInit<Store>) => Store) & {
+  copyOf(source: Store, mutator: (draft: MutableModel<Store>) => MutableModel<Store> | void): Store;
 }

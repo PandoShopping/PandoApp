@@ -1,54 +1,168 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createTodo = /* GraphQL */ `
-  mutation CreateTodo(
-    $input: CreateTodoInput!
-    $condition: ModelTodoConditionInput
+export const createUser = /* GraphQL */ `
+  mutation CreateUser(
+    $input: CreateUserInput!
+    $condition: ModelUserConditionInput
   ) {
-    createTodo(input: $input, condition: $condition) {
+    createUser(input: $input, condition: $condition) {
       id
-      name
-      description
+      username
+      contactMethods
+      profilePicture
+      locationPermissionsEnabled
+      location
+      hasShop
+      listings {
+        id
+        name
+        storeName
+        description
+        category
+        price
+        ogPrice
+        brand
+        size
+        gender
+        isPurchased
+        owner {
+          id
+          username
+          contactMethods
+          profilePicture
+          locationPermissionsEnabled
+          location
+          hasShop
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          owner
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
+      owner
     }
   }
 `;
-export const updateTodo = /* GraphQL */ `
-  mutation UpdateTodo(
-    $input: UpdateTodoInput!
-    $condition: ModelTodoConditionInput
+export const updateUser = /* GraphQL */ `
+  mutation UpdateUser(
+    $input: UpdateUserInput!
+    $condition: ModelUserConditionInput
   ) {
-    updateTodo(input: $input, condition: $condition) {
+    updateUser(input: $input, condition: $condition) {
       id
-      name
-      description
+      username
+      contactMethods
+      profilePicture
+      locationPermissionsEnabled
+      location
+      hasShop
+      listings {
+        id
+        name
+        storeName
+        description
+        category
+        price
+        ogPrice
+        brand
+        size
+        gender
+        isPurchased
+        owner {
+          id
+          username
+          contactMethods
+          profilePicture
+          locationPermissionsEnabled
+          location
+          hasShop
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          owner
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
+      owner
     }
   }
 `;
-export const deleteTodo = /* GraphQL */ `
-  mutation DeleteTodo(
-    $input: DeleteTodoInput!
-    $condition: ModelTodoConditionInput
+export const deleteUser = /* GraphQL */ `
+  mutation DeleteUser(
+    $input: DeleteUserInput!
+    $condition: ModelUserConditionInput
   ) {
-    deleteTodo(input: $input, condition: $condition) {
+    deleteUser(input: $input, condition: $condition) {
       id
-      name
-      description
+      username
+      contactMethods
+      profilePicture
+      locationPermissionsEnabled
+      location
+      hasShop
+      listings {
+        id
+        name
+        storeName
+        description
+        category
+        price
+        ogPrice
+        brand
+        size
+        gender
+        isPurchased
+        owner {
+          id
+          username
+          contactMethods
+          profilePicture
+          locationPermissionsEnabled
+          location
+          hasShop
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+          owner
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
+      owner
     }
   }
 `;
@@ -60,6 +174,7 @@ export const createListing = /* GraphQL */ `
     createListing(input: $input, condition: $condition) {
       id
       name
+      storeName
       description
       category
       price
@@ -67,12 +182,45 @@ export const createListing = /* GraphQL */ `
       brand
       size
       gender
+      isPurchased
+      owner {
+        id
+        username
+        contactMethods
+        profilePicture
+        locationPermissionsEnabled
+        location
+        hasShop
+        listings {
+          id
+          name
+          storeName
+          description
+          category
+          price
+          ogPrice
+          brand
+          size
+          gender
+          isPurchased
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+      }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      owner
     }
   }
 `;
@@ -84,6 +232,7 @@ export const updateListing = /* GraphQL */ `
     updateListing(input: $input, condition: $condition) {
       id
       name
+      storeName
       description
       category
       price
@@ -91,12 +240,45 @@ export const updateListing = /* GraphQL */ `
       brand
       size
       gender
+      isPurchased
+      owner {
+        id
+        username
+        contactMethods
+        profilePicture
+        locationPermissionsEnabled
+        location
+        hasShop
+        listings {
+          id
+          name
+          storeName
+          description
+          category
+          price
+          ogPrice
+          brand
+          size
+          gender
+          isPurchased
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+      }
       createdAt
       updatedAt
       _version
       _deleted
       _lastChangedAt
-      owner
     }
   }
 `;
@@ -108,6 +290,7 @@ export const deleteListing = /* GraphQL */ `
     deleteListing(input: $input, condition: $condition) {
       id
       name
+      storeName
       description
       category
       price
@@ -115,6 +298,189 @@ export const deleteListing = /* GraphQL */ `
       brand
       size
       gender
+      isPurchased
+      owner {
+        id
+        username
+        contactMethods
+        profilePicture
+        locationPermissionsEnabled
+        location
+        hasShop
+        listings {
+          id
+          name
+          storeName
+          description
+          category
+          price
+          ogPrice
+          brand
+          size
+          gender
+          isPurchased
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const createStore = /* GraphQL */ `
+  mutation CreateStore(
+    $input: CreateStoreInput!
+    $condition: ModelStoreConditionInput
+  ) {
+    createStore(input: $input, condition: $condition) {
+      id
+      storeName
+      user {
+        id
+        username
+        contactMethods
+        profilePicture
+        locationPermissionsEnabled
+        location
+        hasShop
+        listings {
+          id
+          name
+          storeName
+          description
+          category
+          price
+          ogPrice
+          brand
+          size
+          gender
+          isPurchased
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+    }
+  }
+`;
+export const updateStore = /* GraphQL */ `
+  mutation UpdateStore(
+    $input: UpdateStoreInput!
+    $condition: ModelStoreConditionInput
+  ) {
+    updateStore(input: $input, condition: $condition) {
+      id
+      storeName
+      user {
+        id
+        username
+        contactMethods
+        profilePicture
+        locationPermissionsEnabled
+        location
+        hasShop
+        listings {
+          id
+          name
+          storeName
+          description
+          category
+          price
+          ogPrice
+          brand
+          size
+          gender
+          isPurchased
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+    }
+  }
+`;
+export const deleteStore = /* GraphQL */ `
+  mutation DeleteStore(
+    $input: DeleteStoreInput!
+    $condition: ModelStoreConditionInput
+  ) {
+    deleteStore(input: $input, condition: $condition) {
+      id
+      storeName
+      user {
+        id
+        username
+        contactMethods
+        profilePicture
+        locationPermissionsEnabled
+        location
+        hasShop
+        listings {
+          id
+          name
+          storeName
+          description
+          category
+          price
+          ogPrice
+          brand
+          size
+          gender
+          isPurchased
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+      }
       createdAt
       updatedAt
       _version

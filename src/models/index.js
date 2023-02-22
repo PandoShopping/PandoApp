@@ -21,11 +21,12 @@ const ListingGender = {
   "OTHER": "OTHER"
 };
 
-const { Todo, Listing } = initSchema(schema);
+const { User, Listing, Store } = initSchema(schema);
 
 export {
-  Todo,
+  User,
   Listing,
+  Store,
   ListingCategory,
   ListingSize,
   ListingGender

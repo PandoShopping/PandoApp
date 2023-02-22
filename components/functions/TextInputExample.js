@@ -14,10 +14,10 @@ const TextInputExample = (props) => {
         style={styles.input}
         onChangeText={onChangeWords}
         value={words}
-        multiline={true}
+      //multiline={props.true}
         maxLength={250} 
         placeholder={props.title}
-        keyboardType="numerical"
+        keyboardType="default"
         
         
       /> 
@@ -29,13 +29,11 @@ const TextInputExample = (props) => {
 
 const styles = StyleSheet.create({
   input: {
-    height: 40,
-    marginBottom: 10,
+    height: 50,
+   // marginBottom: 10,
     width: 360,
-
-    borderWidth: 1,
-    padding: 10,
-    borderRadius: 8,
+    padding: 15,
+    borderRadius: 30,
     backgroundColor: 'white',
   },
 });

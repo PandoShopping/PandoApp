@@ -22,20 +22,19 @@ const TextInputExample = (props) => {
         
       /> 
  </View>
-  //  </TouchableWithoutFeedback>
 
   );
 };
 
 const styles = StyleSheet.create({
   input: {
-    height: 40,
-    marginBottom: 10,
+    height: 50,
     width: 360,
 
-    borderWidth: 1,
-    padding: 10,
-    borderRadius: 8,
+ //   borderWidth: 1,
+    padding: 15,
+    paddingTop: 15,
+    borderRadius: 30,
     backgroundColor: 'white',
   },
 });
