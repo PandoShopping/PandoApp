@@ -14,7 +14,7 @@ const AddListingForm = () => {
   //  const [category, setCategory] = useState('Clothing');
 
   return (
-    <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false} >
 
       <View style={styles.backgroundView}>
 
@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
   justifyContent: 'center',
   paddingHorizontal: 15,
   fontSize: 14,
+
 
   text: {
     marginTop: 10,

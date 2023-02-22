@@ -1,13 +1,13 @@
 import React from "react";
 import { Text, View, StyleSheet, SafeAreaView, ScrollView } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import AddImage from "../../components/AddImage.js";
+import AddImage from "../components/AddImage.js";
 
 const MyListingsScreen = () => {
 return (
   <SafeAreaView style={styles.container}>
   <ScrollView>
-    <Text style={styles.text}>Create new listing</Text>
+    <Text style={styles.text}></Text>
 	  <AddImage />
   </ScrollView>
 </SafeAreaView>
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
       flex-shrink: 1 -> item will shrink at same rate as any other item 
       flex-basis: 0 -> item starts with no size, grows to fill availble space 
     */
-   backgroundColor: 'fff'
+   backgroundColor: 'white'
   }, 
   text: { 
     color: "black", 

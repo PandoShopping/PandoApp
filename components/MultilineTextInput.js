@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, StyleSheet, ScrollView, TextInput, Keyboard, TouchableWithoutFeedback} from 'react-native';
 import { useState } from 'react'; 
+import {COLORS} from '../constants/theme'
+
 
 const TextInputExample = (props) => {
   const [text, onChangeText] = useState("Enter words"); 
@@ -35,7 +37,7 @@ const styles = StyleSheet.create({
     padding: 15,
     paddingTop: 15,
     borderRadius: 30,
-    backgroundColor: 'white',
+    backgroundColor: COLORS.buttonPrimary,
   },
 });
 

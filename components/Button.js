@@ -1,6 +1,7 @@
 import { StyleSheet, View, Pressable, Text, Image } from 'react-native';
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { VStack } from '@react-native-material/core';
+import {COLORS} from '../constants/theme'
 
 
 export default function Button({ label, theme, onPress}) {
@@ -29,7 +30,7 @@ export default function Button({ label, theme, onPress}) {
   else if (theme === "bigAss") { 
     return (
       <View style={[styles.biggerButtonContainer]}>
-        <Pressable style={[styles.button, { backgroundColor: "#fff" }]} onPress={onPress} > 
+        <Pressable style={[styles.button, { backgroundColor: COLORS.buttonPrimary }]} onPress={onPress} > 
               <VStack spacing ={5} style = {{alignItems: "center"}} > 
               <Image style={{width: 180, height: 136}} source={require("./../assets/images/megacreator.png")} />
                <Text style={[styles.primaryButtonLabel]}>New image</Text>
@@ -65,7 +66,6 @@ const styles = StyleSheet.create({
   biggerButtonContainer: {
     width: 360,
     height: 300,
-    backgroundColor: 'fff', 
   },
 
   button: {
@@ -75,7 +75,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   flexDirection: 'row',
-  backgroundColor: "#fff"
 
   },
  

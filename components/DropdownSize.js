@@ -1,9 +1,9 @@
-
-
 import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { MultiSelect } from 'react-native-element-dropdown';
 import Resize from 'react-native-vector-icons/Ionicons';
+import {COLORS} from '../constants/theme'
+
 
 const data = [
   {label: 'Plus', value: 'Plus'},
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
   container: { width: 360}, //need to make the width dynamic
   dropdown: {
     height: 50,
-    backgroundColor: 'white',
+    backgroundColor: COLORS.buttonPrimary,
     borderBottomColor: 'transparent',
     borderBottomWidth: 0.5,
     borderRadius: 30,
@@ -83,16 +83,11 @@ const styles = StyleSheet.create({
     height: 20,
 
   },
-  // inputSearchStyle: {
-  //   height: 40,
-  //   fontSize: 16,
-  // },
+  
   icon: {
     marginRight: 5,
   },
   selectedStyle: {
     borderRadius: 30,
-    
-  //  backgroundColor: '#F3EDF6',
   },
 });

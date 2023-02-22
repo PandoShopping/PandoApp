@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { MultiSelect } from 'react-native-element-dropdown';
 import PersonOutline from 'react-native-vector-icons/Ionicons';
+import {COLORS} from '../constants/theme'
+
 
 const data = [
   { label: 'Womens', value: 'Womens' },
@@ -49,7 +51,7 @@ const styles = StyleSheet.create({
   container: { width: 360}, //need to make the width dynamic
   dropdown: {
     height: 50,
-    backgroundColor: 'white',
+    backgroundColor: COLORS.buttonPrimary,
     borderBottomColor: 'transparent',
     borderBottomWidth: 0.5,
     borderRadius: 30,

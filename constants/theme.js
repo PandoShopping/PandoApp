@@ -1,5 +1,7 @@
 export const COLORS = {
-  //include hex codes of constant colors here 
+  //button and fields background colors
+  buttonPrimary: "#F2F5FC",
+
 };
 
 export const SIZES = {

@@ -44,7 +44,7 @@ const MyAppHeader = () => {
 
 function App() {
   return (  
-   <NavigationContainer >
+   <NavigationContainer theme = {customTheme}>
    <MyTabs />
   <StatusBar style="auto" />
  
@@ -54,42 +54,10 @@ function App() {
 
 const customTheme = {
   ...AmplifyTheme,
-  button: {
-    ...AmplifyTheme.button,
-    backgroundColor: '#156FD7',
-    borderRadius: 8,
-    alignItems: 'center',
-		padding: 16,
+  colors: {
+    ...AmplifyTheme.colors,
+    background: 'white'
   },
-  buttonDisabled: {
-    backgroundColor: '#A8C9F0', 
-    borderRadius: 8,
-    alignItems: 'center',
-		padding: 16,
-  },
-  sectionHeaderText: {
-    fontSize: 25,
-  },
-  sectionFooter: {
-		width: '100%',
-		padding: 10,
-		flexDirection: 'row',
-		justifyContent: 'space-between',
-		marginTop: 15,
-		marginBottom: 20,
-	},
-	sectionFooterLink: {
-		fontSize: 14,
-		color: 'black',
-		alignItems: 'baseline',
-		textAlign: 'center',
-	},
-	sectionFooterLinkDisabled: {
-		fontSize: 14,
-		color: 'gray',
-		alignItems: 'baseline',
-		textAlign: 'center',
-	},
 };
 
 export default withAuthenticator(App, false, [], null, customTheme);

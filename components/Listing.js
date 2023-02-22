@@ -27,6 +27,7 @@ const Listing = (props) => {
 };
 
 const styles = StyleSheet.create({
+  backgroundColor: "white",
   container: {
     backgroundColor: 'gray',
     padding: 25,
