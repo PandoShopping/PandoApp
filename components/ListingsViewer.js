@@ -11,27 +11,29 @@ const ListingsViewer = () => {
       description:
         'test1Description',
       category: 'Clothing', 
-      price: '$30', 
-      ogPrice: '$44.95', 
+      price: '30', 
+      ogPrice: '44.95', 
       brand: 'Garage Clothing', 
       size: 'M', 
       gender: 'Womens', 
-      isPurchased: 'No'
+      isPurchased: 'No',
+      imagePath: "'./../assets/images/placeholder-image.png'"
     },
 
       {
       id: 'test-01',
-      name: "test1Name", 
+      name: "New York Crewneck Navy Fleece", 
       storeName: "testStoreName", 
       description:
         'test1Description',
-      category: 'test1Categroy', 
-      price: 'test1Price', 
-      ogPrice: 'test1OgPrice', 
-      brand: 'test1Brand', 
-      size: 'test1Size', 
-      gender: 'test1Gender', 
-      isPurchased: 'test1IsPurchased'
+      category: 'Clothing', 
+      price: '42', 
+      ogPrice: '58.45', 
+      brand: 'Princess Polly', 
+      size: 'XL', 
+      gender: 'Womens', 
+      isPurchased: 'No',
+      imagePath: "'./../assets/images/placeholder-image.png'"
     },
 
     // {
@@ -68,7 +70,11 @@ const ListingsViewer = () => {
   return (
     <View>
       {listingsToRender.map((listing) => (
-        <Listing id={listing.id} name={listing.name} storeName={listing.storeName} description={listing.description} category={listing.category} price={listing.price} ogPrice={listing.ogPrice} brand={listing.brand} size={listing.size} gender={listing.gender} isPurchased={listing.isPurchased}/>
+        <Listing id={listing.id} name={listing.name} 
+        storeName={listing.storeName} description={listing.description} 
+        category={listing.category} price={listing.price} ogPrice={listing.ogPrice} brand={listing.brand} 
+        size={listing.size} gender={listing.gender}
+        isPurchased={listing.isPurchased} imagePath = {listing.imagePath}/>
       ))}
     </View>
   );

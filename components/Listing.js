@@ -1,33 +1,33 @@
 import React from 'react';
-import { Text, View, StyleSheet, Image} from "react-native";
+import { Text, View, StyleSheet, Image, FlatList} from "react-native";
 import { COLORS, FONTS } from '../constants';
 import { HStack, VStack } from '@react-native-material/core';
 import { placeholderImage } from "../constants";
 
 
-
 const Listing = (props) => {
   const listing = props;
   return (
-  <View style={styles.container}>
 
+    
+  <View style={styles.container}>
        <Image style = {styles.image} source={require("./../assets/images/placeholder-image.png")} />
-       
- <VStack spacing ={7} style = {{alignItems: "left"}}> 
+       <VStack spacing ={7} style = {{alignItems: "left"}}> 
        
        <Text style={styles.headerText}>{listing.name}</Text>
        <Text style={styles.brandText}>{listing.brand}</Text>
-       <HStack spacing ={30} style = {{alignItems: "left",  justifyContent: 'space-between',}}>
+       <HStack spacing ={30} style = {{alignItems: "left",  
+       justifyContent: 'space-between',
+       maxWidth: 160}}> 
+      {/* do not put this css in the stylesheet  */}
        <HStack spacing ={7} style = {{alignItems: "center", }}>
-       <Text style={styles.originalPrice}>{listing.ogPrice}</Text>
-       <Text style={styles.newPrice}>{listing.price}</Text> 
+       <Text style={styles.originalPrice}>${listing.ogPrice}</Text>
+       <Text style={styles.newPrice}>${listing.price}</Text> 
        </HStack>
        <Text style={styles.size}>Size: {listing.size}</Text>
        </HStack> 
 
   </VStack> 
-
-
 
        
        {/* /// unused listing vars //// */
@@ -46,10 +46,11 @@ const Listing = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    //backgroundColor: COLORS.buttonPrimary,
     maxWidth: 203,
     maxHeight: 325,
     flex: 1,
+    //testing don't delete:
+    backgroundColor: COLORS.buttonPrimary,
   },
 
   image: {

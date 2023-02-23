@@ -3,6 +3,8 @@ import { Text, View, StyleSheet} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import ListingsViewer from "./../../components/ListingsViewer"
 import Button from './../../components/Button'
+//import Listing from "./../../components/Listing"
+//import ListingsViewer from "./../../components/ListingsViewer";
 
 export const BrowseListingsScreen = () => {
   
