@@ -1,10 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View} from "react-native";
 import { CurrentRenderContext, NavigationContainer } from '@react-navigation/native';
-<<<<<<< Updated upstream
-// import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-=======
+
  import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
  //import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -13,7 +10,6 @@ import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 
 //import {PaperProvider} from 'react-native-paper';
 
->>>>>>> Stashed changes
 import { ProfileHomeScreen, AddListingScreen, BrowseListingsScreen} from "./screens"
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import { Amplify } from 'aws-amplify'
