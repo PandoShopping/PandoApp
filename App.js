@@ -1,8 +1,19 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View} from "react-native";
 import { CurrentRenderContext, NavigationContainer } from '@react-navigation/native';
+<<<<<<< Updated upstream
 // import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+=======
+ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+ //import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
+
+//import {PaperProvider} from 'react-native-paper';
+
+>>>>>>> Stashed changes
 import { ProfileHomeScreen, AddListingScreen, BrowseListingsScreen} from "./screens"
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import { Amplify } from 'aws-amplify'
@@ -20,20 +31,54 @@ Amplify.configure({
   }
 });
 
+
+
+const theme = {
+  ...DefaultTheme,
+  roundness: 2,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: 'tomato' ,
+    accent: 'tomato' ,
+  },
+};
+
 const Tab = createBottomTabNavigator();
 
 function MyTabs() {
   return (
+   // <PaperProvider theme={DefaultTheme}>
 
-    <Tab.Navigator
+  //  </PaperProvider>
+
+
+  
+  
+  <Tab.Navigator
     initialRouteName="Shop"
+    barStyle={{ backgroundColor: 'tomato' }}
+
+    activeColor="#e91e63"
+
     screenOptions={{
       tabBarActiveTintColor: COLORS.buttonPrimaryMedium,
       backgroundColor: 'green'
     }}
 
   >
-      <Tab.Screen name="Shop" component={BrowseListingsScreen}  />
+
+      <Tab.Screen
+        name="Shop"
+        component={BrowseListingsScreen}
+        options={{
+          tabBarLabel: 'Shop',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="home" color={color} size={26} />
+          ),
+        }}
+      />
+
+
      <Tab.Screen name="Sell" component={AddListingScreen} />
      <Tab.Screen name="Profile" component={ProfileHomeScreen} />
     </Tab.Navigator>
@@ -59,11 +104,15 @@ const MyAppHeader = () => {
 function App() {
   return ( 
      
-   <NavigationContainer theme = {customTheme}>
+    <PaperProvider  theme={theme}>
+<NavigationContainer theme = {customTheme}>
   {/* <StatusBar style="auto" /> */}
   <MyTabs />
 
  </NavigationContainer>
+
+    </PaperProvider>
+   
    );
  }
 
@@ -79,8 +128,9 @@ const customTheme = {
   }
 };
 
-export default withAuthenticator(App, false, [], null, customTheme);
 
+
+ export default withAuthenticator(App, false, [], null, customTheme);
 
 
  // <Tab.Navigator 
