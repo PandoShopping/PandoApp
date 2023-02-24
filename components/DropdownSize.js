@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
   container: { width: 360}, //need to make the width dynamic
   dropdown: {
     height: 50,
-    backgroundColor: COLORS.buttonPrimary,
+    backgroundColor: COLORS.buttonPrimaryLight,
     borderBottomColor: 'transparent',
     borderBottomWidth: 0.5,
     borderRadius: 30,

@@ -36,6 +36,8 @@ const ListingsViewer = () => {
       imagePath: "'./../assets/images/placeholder-image.png'"
     },
 
+    
+
     // {
     //   id: 'test-01',
     //   name: "test1Name", 

@@ -30,7 +30,7 @@ export default function Button({ label, theme, onPress}) {
   else if (theme === "bigAss") { 
     return (
       <View style={[styles.biggerButtonContainer]}>
-        <Pressable style={[styles.button, { backgroundColor: COLORS.buttonPrimary }]} onPress={onPress} > 
+        <Pressable style={[styles.button, { backgroundColor: COLORS.buttonPrimaryLight }]} onPress={onPress} > 
               <VStack spacing ={5} style = {{alignItems: "center"}} > 
               <Image style={{width: 180, height: 136}} source={require("./../assets/images/megacreator.png")} />
                <Text style={[styles.primaryButtonLabel]}>New image</Text>

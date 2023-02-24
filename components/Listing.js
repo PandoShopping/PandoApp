@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     maxHeight: 325,
     flex: 1,
     //testing don't delete:
-    backgroundColor: COLORS.buttonPrimary,
+//    backgroundColor: COLORS.buttonPrimaryLight,
   },
 
   image: {

@@ -1,9 +1,10 @@
 export const COLORS = {
   //button and fields background colors
-  buttonPrimary: "#F1F5F9",
-
+  buttonPrimaryLight: "#F1F5F9",
+  buttonPrimaryMedium: "#156FD7",
   textPrimary: "black",
   textSecondary: "gray"
+
 
 };
 

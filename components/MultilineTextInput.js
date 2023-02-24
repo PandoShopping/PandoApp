@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     padding: 15,
     paddingTop: 15,
     borderRadius: 30,
-    backgroundColor: COLORS.buttonPrimary,
+    backgroundColor: COLORS.buttonPrimaryLight,
   },
 });
 
