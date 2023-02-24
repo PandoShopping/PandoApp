@@ -4455,6 +4455,11 @@
   "resolved" "https://registry.npmjs.org/@react-native/normalize-color/-/normalize-color-2.0.0.tgz"
   "version" "2.0.0"
 
+"@react-native/normalize-colors@*":
+  "integrity" "sha512-285lfdqSXaqKuBbbtP9qL2tDrfxdOFtIMvkKadtleRQkdOxx+uzGvFr82KHmc/sSiMtfXGp7JnFYWVh4sFl7Yw=="
+  "resolved" "https://registry.npmjs.org/@react-native/normalize-colors/-/normalize-colors-0.72.0.tgz"
+  "version" "0.72.0"
+
 "@react-native/polyfills@2.0.0":
   "integrity" "sha512-K0aGNn1TjalKj+65D7ycc1//H9roAQ51GJVk5ZJQFb2teECGmzd86bYDC0aYdbRf7gtovescq4Zt6FR0tgXiHQ=="
   "resolved" "https://registry.npmjs.org/@react-native/polyfills/-/polyfills-2.0.0.tgz"
@@ -7335,6 +7340,15 @@
   "version" "2.3.0"
   dependencies:
     "@react-native/normalize-color" "*"
+    "invariant" "*"
+    "prop-types" "*"
+
+"deprecated-react-native-prop-types@^4.0.0":
+  "integrity" "sha512-q0kk77qFPC4adlnZH7cv9lfbHALeaTkl7wT1uNERc+e0Os3KcBKKy1rVliTE8sfey6TP6OPzoIXpr9OPidvvHw=="
+  "resolved" "https://registry.npmjs.org/deprecated-react-native-prop-types/-/deprecated-react-native-prop-types-4.0.0.tgz"
+  "version" "4.0.0"
+  dependencies:
+    "@react-native/normalize-colors" "*"
     "invariant" "*"
     "prop-types" "*"
 
@@ -11989,7 +12003,7 @@
     "kleur" "^3.0.3"
     "sisteransi" "^1.0.5"
 
-"prop-types@*", "prop-types@^15.5.9", "prop-types@^15.7.2":
+"prop-types@*", "prop-types@^15.5.9", "prop-types@^15.6.1", "prop-types@^15.7.2":
   "integrity" "sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg=="
   "resolved" "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
   "version" "15.8.1"
@@ -12310,6 +12324,13 @@
   "integrity" "sha512-8fxgeHKwGcL657eAYpdBTkDIxNhbIHI+kyyO0Yac2dgVAN184JoIwQcW2z6snahwDaCObQOu0biLFHnsH+4KSg=="
   "resolved" "https://registry.npmjs.org/react-native-keychain/-/react-native-keychain-8.1.1.tgz"
   "version" "8.1.1"
+
+"react-native-material-bottom-navigation@^1.0.5":
+  "integrity" "sha512-SpbFHH/2cJELZ9z4THE7xMCM8uBBvjqfN3+BB30IfM0144gxHFSVdzFoTj7I2U7jV/cWQbeJ8vRN99ACTlSpwA=="
+  "resolved" "https://registry.npmjs.org/react-native-material-bottom-navigation/-/react-native-material-bottom-navigation-1.0.5.tgz"
+  "version" "1.0.5"
+  dependencies:
+    "prop-types" "^15.6.1"
 
 "react-native-material-textfield@^0.16.1":
   "integrity" "sha512-pcV/ic3i6vYEODS7pvAMUYJ+evkzIB8cjXtSzkab9rBtYNGRpAlM0Yp8QNnjZ7foZqkj9Ynav0nguWcuJST10A=="

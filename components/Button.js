@@ -2,9 +2,14 @@ import { StyleSheet, View, Pressable, Text, Image } from 'react-native';
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { VStack } from '@react-native-material/core';
 import {COLORS} from '../constants/theme'
+import LogOut from "@expo/vector-icons/Feather";
+
+const icons = { 
 
 
-export default function Button({ label, theme, onPress}) {
+}
+
+export default function Button({ label, theme, onPress, icon}) {
   if (theme === "primary") { 
     return (
       <View
@@ -14,12 +19,15 @@ export default function Button({ label, theme, onPress}) {
           style={[styles.button, {  }]}
           onPress={onPress}
         >
-          <FontAwesome
-            name="picture-o"
-            size={18}
-            color="#25292e"
-            style={styles.buttonIcon}
-          />
+         
+         {icon}
+
+          {/* <FontAwesome>
+            name = 
+          </FontAwesome> 
+          
+          
+          */}
           
           <Text style={[styles.buttonLabel]}>{label}</Text>
         </Pressable>
@@ -61,6 +69,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     padding: 3,
+    backgroundColor: COLORS.buttonPrimaryLight,
+    borderRadius: 20
   },
 
   biggerButtonContainer: {

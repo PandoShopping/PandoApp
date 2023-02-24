@@ -3,8 +3,6 @@ import { StyleSheet, View} from "react-native";
 import { CurrentRenderContext, NavigationContainer } from '@react-navigation/native';
 // import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
-
 import { ProfileHomeScreen, AddListingScreen, BrowseListingsScreen} from "./screens"
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import { Amplify } from 'aws-amplify'
@@ -30,8 +28,10 @@ function MyTabs() {
     <Tab.Navigator
     initialRouteName="Shop"
     screenOptions={{
-      tabBarActiveTintColor: COLORS.buttonPrimaryMedium
+      tabBarActiveTintColor: COLORS.buttonPrimaryMedium,
+      backgroundColor: 'green'
     }}
+
   >
       <Tab.Screen name="Shop" component={BrowseListingsScreen}  />
      <Tab.Screen name="Sell" component={AddListingScreen} />
@@ -73,6 +73,10 @@ const customTheme = {
     ...AmplifyTheme.colors,
     background: 'white'
   },
+  hereig: {
+    padding: 10, 
+    backgroundColor: 'green'
+  }
 };
 
 export default withAuthenticator(App, false, [], null, customTheme);
