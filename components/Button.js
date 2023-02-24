@@ -13,27 +13,32 @@ export default function Button({ label, theme, onPress, icon}) {
   if (theme === "primary") { 
     return (
       <View
-      style={[styles.buttonContainer]}
+      style={[styles.lightButtonContainer]}
       >
         <Pressable
           style={[styles.button, {  }]}
-          onPress={onPress}
-        >
-         
+          onPress={onPress}>
          {icon}
-
-          {/* <FontAwesome>
-            name = 
-          </FontAwesome> 
-          
-          
-          */}
-          
-          <Text style={[styles.buttonLabel]}>{label}</Text>
+          <Text style={[styles.primaryButtonLabel]}>{label}</Text>
         </Pressable>
     </View>
     );
   } 
+
+  else if (theme === "secondary") { 
+    return (
+      <View
+      style={[styles.mediumButtonContainer]}
+      >
+        <Pressable
+          style={[styles.button, {  }]}
+          onPress={onPress}>
+         {icon}
+          <Text style={[styles.tertiaryButtonLabel]}>{label}</Text>
+        </Pressable>
+    </View>
+    );
+  }
 
   else if (theme === "bigAss") { 
     return (
@@ -61,16 +66,30 @@ export default function Button({ label, theme, onPress, icon}) {
 }
 
 const styles = StyleSheet.create({
-  buttonContainer: {
-    width: 275,
-    height: 55,
-    marginHorizontal: 20,
+  lightButtonContainer: {
+    width: 360,
+    height: 50,
+  //  marginHorizontal: 20,
     marginBottom: 5,
     alignItems: 'center',
     justifyContent: 'center',
     padding: 3,
     backgroundColor: COLORS.buttonPrimaryLight,
     borderRadius: 20
+  },
+
+  mediumButtonContainer:{
+
+    width: 360,
+    height: 50,
+  //  marginHorizontal: 20,
+    marginBottom: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 3,
+    backgroundColor: COLORS.buttonPrimaryMedium,
+    borderRadius: 20
+
   },
 
   biggerButtonContainer: {
@@ -89,9 +108,8 @@ const styles = StyleSheet.create({
   },
  
   primaryButtonLabel: {
-    paddingTop: 30,
     color: "#25292e",
-    fontSize: 18,
+    fontSize: 14,
     fontFamily: "Avenir-Heavy",
   },
 
@@ -101,6 +119,13 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontFamily: "Avenir-Medium",
 
+  },
+
+  tertiaryButtonLabel:{
+    color: "white",
+    fontSize: 15,
+    textAlign: "center",
+    fontFamily: "Avenir-Medium",
   },
 
   buttonIcon: {
