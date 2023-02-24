@@ -1,6 +1,7 @@
+
 import React from 'react';
 import Listing from './Listing';
-import { Text, View, StyleSheet} from "react-native";
+import { FlatList, StyleSheet, View } from 'react-native';
 
 const ListingsViewer = () => {
   const listingsToRender = [
@@ -35,51 +36,92 @@ const ListingsViewer = () => {
       isPurchased: 'No',
       imagePath: "'./../assets/images/placeholder-image.png'"
     },
+    {
+      id: 'test-01',
+      name: "New York Crewneck Navy Fleece", 
+      storeName: "testStoreName", 
+      description:
+        'test1Description',
+      category: 'Clothing', 
+      price: '42', 
+      ogPrice: '58.45', 
+      brand: 'Princess Polly', 
+      size: 'XL', 
+      gender: 'Womens', 
+      isPurchased: 'No',
+      imagePath: "'./../assets/images/placeholder-image.png'"
+    },
+    {
+      id: 'test-01',
+      name: "New York Crewneck Navy Fleece", 
+      storeName: "testStoreName", 
+      description:
+        'test1Description',
+      category: 'Clothing', 
+      price: '42', 
+      ogPrice: '58.45', 
+      brand: 'Princess Polly', 
+      size: 'XL', 
+      gender: 'Womens', 
+      isPurchased: 'No',
+      imagePath: "'./../assets/images/placeholder-image.png'"
+    },
+    {
+      id: 'test-01',
+      name: "New York Crewneck Navy Fleece", 
+      storeName: "testStoreName", 
+      description:
+        'test1Description',
+      category: 'Clothing', 
+      price: '42', 
+      ogPrice: '58.45', 
+      brand: 'Princess Polly', 
+      size: 'XL', 
+      gender: 'Womens', 
+      isPurchased: 'No',
+      imagePath: "'./../assets/images/placeholder-image.png'"
+    },
 
-    
-
-    // {
-    //   id: 'test-01',
-    //   name: "test1Name", 
-    //   storeName: "testStoreName", 
-    //   description:
-    //     'test1Description',
-    //   category: 'test1Categroy', 
-    //   price: 'test1Price', 
-    //   ogPrice: 'test1OgPrice', 
-    //   brand: 'test1Brand', 
-    //   size: 'test1Size', 
-    //   gender: 'test1Gender', 
-    //   isPurchased: 'test1IsPurchased'
-    // },
-    // {
-    //   id: 'test-02',
-    //   name: "test2Name",
-    //   storeName: "testStoreName",  
-    //   description:
-    //     'test2Description',
-    //   category: 'test2Categroy', 
-    //   price: 'test2Price', 
-    //   ogPrice: 'test2gPrice', 
-    //   brand: 'test2Brand', 
-    //   size: 'test2Size', 
-    //   gender: 'test2Gender', 
-    //   isPurchased: 'test2IsPurchased'
-    //   //TODO: chnage this to actual data that can be formatted in UI 
-    // }
   ];
 
+  const renderItem = ({ item }) => (
+    <Listing
+      id={item.id}
+      name={item.name}
+      storeName={item.storeName}
+      description={item.description}
+      category={item.category}
+      price={item.price}
+      ogPrice={item.ogPrice}
+      brand={item.brand}
+      size={item.size}
+      gender={item.gender}
+      isPurchased={item.isPurchased}
+      imagePath={item.imagePath}
+    />
+  );
+
   return (
-    <View>
-      {listingsToRender.map((listing) => (
-        <Listing id={listing.id} name={listing.name} 
-        storeName={listing.storeName} description={listing.description} 
-        category={listing.category} price={listing.price} ogPrice={listing.ogPrice} brand={listing.brand} 
-        size={listing.size} gender={listing.gender}
-        isPurchased={listing.isPurchased} imagePath = {listing.imagePath}/>
-      ))}
+    <View style={styles.container}>
+      <FlatList
+        data={listingsToRender}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id}
+        numColumns={2}
+        contentContainerStyle={styles.listContainer}
+      />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  listContainer: {
+    paddingHorizontal: 16,
+    paddingBottom: 16,
+  },
+});
 
 export default ListingsViewer;

@@ -11,8 +11,6 @@ import { AmplifyTheme } from 'aws-amplify-react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { COLORS } from "./constants";
 
-
-
 Amplify.configure({
   ...awsmobile,
   Analytics: {
