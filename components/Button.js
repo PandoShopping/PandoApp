@@ -4,10 +4,6 @@ import { VStack } from '@react-native-material/core';
 import {COLORS} from '../constants/theme'
 import LogOut from "@expo/vector-icons/Feather";
 
-const icons = { 
-
-
-}
 
 export default function Button({ label, theme, onPress, icon}) {
   if (theme === "primary") { 
@@ -44,7 +40,7 @@ export default function Button({ label, theme, onPress, icon}) {
     return (
       <View style={[styles.biggerButtonContainer]}>
         <Pressable style={[styles.button, { backgroundColor: COLORS.buttonPrimaryLight }]} onPress={onPress} > 
-              <VStack spacing ={5} style = {{alignItems: "center"}} > 
+              <VStack spacing ={8} style = {{alignItems: "center"}} > 
               <Image style={{width: 180, height: 136}} source={require("./../assets/images/megacreator.png")} />
                <Text style={[styles.primaryButtonLabel]}>New image</Text>
                 <Text style={[styles.secondaryButtonLabel]}>{label}
@@ -94,7 +90,7 @@ const styles = StyleSheet.create({
 
   biggerButtonContainer: {
     width: 360,
-    height: 300,
+    height: 280,
   },
 
   button: {

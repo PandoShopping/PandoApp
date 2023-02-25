@@ -1,7 +1,11 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View} from "react-native";
-import { CurrentRenderContext, NavigationContainer } from '@react-navigation/native';
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import { CurrentRenderContext, NavigationContainer,
+  useFocusEffect, } from '@react-navigation/native';
+// import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
 import { ProfileHomeScreen, AddListingScreen, BrowseListingsScreen} from "./screens"
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import { Amplify } from 'aws-amplify'
@@ -10,6 +14,23 @@ import { withAuthenticator, SignIn, ConfirmSignUp, ConfirmSignIn, ForgotPassword
 import { AmplifyTheme } from 'aws-amplify-react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { COLORS } from "./constants";
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+
+// import GetLocation from 'react-native-get-location'
+
+// GetLocation.getCurrentPosition({
+//     enableHighAccuracy: true,
+//     timeout: 15000,
+// })
+// .then(location => {
+//     console.log(location);
+// })
+// .catch(error => {
+//     const { code, message } = error;
+//     console.warn(code, message);
+// })
+
 
 Amplify.configure({
   ...awsmobile,
@@ -18,44 +39,61 @@ Amplify.configure({
   }
 });
 
-const Tab = createMaterialBottomTabNavigator();
+// const Tab = createMaterialBottomTabNavigator();
+const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
+
+const screenOptions = {
+  tabBarStyle:{
+    backgroundColor:'white',
+    height:90,
+  },
+  // tabBarActiveBackgroundColor​:{
+    
+  // },
+  tabBarItemStyle:{
+    //backgroundColor:COLORS.buttonPrimaryLight,
+    borderRadius:30,
+    padding: 5
+  },
+  tabBarLabelStyle:{
+    fontFamily: "Avenir-Medium",
+    margin: 2
+  }
+  
+};
+
+const sceneContainerStyle = {
+  backgroundColor: 'white',
+};
+
 
 function MyTabs() {
   return (
-    // <Tab.Navigator 
-    // >
-    //   <Tab.Screen name="Shop" component={BrowseListingsScreen} />
-    //   <Tab.Screen name="Sell" component={AddListingScreen} />
-    //   <Tab.Screen name="Profile" component={ProfileHomeScreen} />
-    // </Tab.Navigator>
 
-    <Tab.Navigator initialRouteName="Sell"
-    activeColor="#156FD7"
-  inactiveColor="gray"
-    barStyle={{ backgroundColor: 'white', }}
+    <Tab.Navigator {...{ screenOptions, sceneContainerStyle }}>
+    <Tab.Screen name="Shop" component={BrowseListingsScreen} options={{ 
+      title: "fuck shit bitch",
+          tabBarIcon: ({ color, size }) => (
+            <AntDesign name="shoppingcart" color={color} size={size} />
+          ), 
+        }}
+/>
+    <Tab.Screen name="Sell" component={AddListingScreen} options={{
+          tabBarIcon: ({ color, size }) => (
+            <AntDesign name="creditcard" color={color} size={size} />
+          ),
+        }}
+/>
+     <Tab.Screen name="Profile" component={ProfileHomeScreen} options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="person-outline" color={color} size={size} />
+          ),
+        }}
+/>
 
-    screenOptions={({ route }) => ({
-      tabBarIcon: ({ focused, color, size }) => {
-        let iconName;
-
-        if (route.name === 'Shop') {
-          iconName = focused
-            ? 'ios-information-circle'
-            : 'ios-information-circle-outline';
-        } else if (route.name === 'Sell') {
-          iconName = focused ? 'ios-list' : 'ios-list-outline';
-        } else if (route.name === 'Profile')
-          iconName = focused ? 'ios-list' : 'ios-list-outline';
-
-        return <Ionicons name={iconName} size={20} color={color} />;
-      },
-      
-    })}
-  >
-    <Tab.Screen name="Shop" component={BrowseListingsScreen} />
-    <Tab.Screen name="Sell" component={AddListingScreen} />
-    <Tab.Screen name="Profile" component={ProfileHomeScreen} />
   </Tab.Navigator>
+
   );
 }
 
@@ -75,9 +113,8 @@ const MyAppHeader = () => {
 
 function App() {
   return (  
-   <NavigationContainer theme = {customTheme}>
-   <MyTabs />
-  <StatusBar style="auto" />
+   <NavigationContainer>
+           <MyTabs />
  
  </NavigationContainer>
    );
@@ -87,7 +124,7 @@ const customTheme = {
   ...AmplifyTheme,
   colors: {
     ...AmplifyTheme.colors,
-    background: 'white'
+    //background: 'white'
   },
 };
 

@@ -8,7 +8,7 @@ const AddListingScreen = () => {
 return (
   <SafeAreaView style={styles.container}>
   <ScrollView>
-    <Text style={styles.text}>Create new listing</Text>
+    {/* <Text style={styles.text}>Create new listing</Text> */}
     <AddImage />
     <AddListingForm />   
   </ScrollView>
