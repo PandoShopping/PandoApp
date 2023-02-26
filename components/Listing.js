@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
   container: {
     maxWidth: 203,
     maxHeight: 325,
+    padding: 18,
     flex: 1,
     //testing don't delete:
 //    backgroundColor: COLORS.buttonPrimaryLight,
@@ -62,15 +63,16 @@ const styles = StyleSheet.create({
 
   headerText: {
     fontFamily: FONTS.extraBold,
-    fontSize: 16,
+    fontSize: 14,
     width: 160,
     paddingTop: 7,
 
   },
 
   brandText: {
-    fontFamily: FONTS.bold,
-    color: COLORS.textSecondary
+    fontFamily: FONTS.medium,
+    color: COLORS.textSecondary,
+    fontSize: 14
   },
 
   originalPrice: {
@@ -78,15 +80,22 @@ const styles = StyleSheet.create({
     textDecorationLine: 'line-through', 
     textDecorationStyle: 'solid',
     color: '#F0573F',
+    fontSize: 13
+
+    
   }, 
 
   newPrice: {
     fontFamily: FONTS.bold,
-    color: '#6AA246'
+    color: '#6AA246',
+    fontSize: 13
+
   },
 
   size: {
     fontFamily: FONTS.medium,
+    fontSize: 13
+
   },
 
 // not used by anything yet:

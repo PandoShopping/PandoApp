@@ -57,7 +57,8 @@ const MultiSelectComponent = () => {
 export default MultiSelectComponent;
 
 const styles = StyleSheet.create({
-  container: { width: 360}, //need to make the width dynamic
+
+  container: { width: 360,   paddingBottom: 20}, //need to make the width dynamic
   dropdown: {
     height: 50,
     backgroundColor: COLORS.buttonPrimaryLight,

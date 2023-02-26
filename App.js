@@ -6,10 +6,7 @@ import { CurrentRenderContext, NavigationContainer } from '@react-navigation/nat
 //   NavigationMaterialBottomTabOptions,
 // } from 'react-navigation-material-bottom-tabs';
 
- //import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import { BottomNavigation, Text, DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
-import React, { useState, useEffect, Component } from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 
 
@@ -21,7 +18,22 @@ import { withAuthenticator, SignIn, ConfirmSignUp, ConfirmSignIn, ForgotPassword
 import { AmplifyTheme } from 'aws-amplify-react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { COLORS } from "./constants";
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
+// import GetLocation from 'react-native-get-location'
+
+// GetLocation.getCurrentPosition({
+//     enableHighAccuracy: true,
+//     timeout: 15000,
+// })
+// .then(location => {
+//     console.log(location);
+// })
+// .catch(error => {
+//     const { code, message } = error;
+//     console.warn(code, message);
+// })
 
 
 Amplify.configure({
@@ -33,17 +45,29 @@ Amplify.configure({
 
 const Tab = createMaterialBottomTabNavigator();
 
-
-const theme = {
-  ...DefaultTheme,
-  roundness: 2,
-  colors: {
-    ...DefaultTheme.colors,
-    primary: 'tomato' ,
-    accent: 'tomato' ,
+const screenOptions = {
+  tabBarStyle:{
+    backgroundColor:'white',
+    height:90,
   },
+  // tabBarActiveBackgroundColor​:{
+    
+  // },
+  tabBarItemStyle:{
+    //backgroundColor:COLORS.buttonPrimaryLight,
+    borderRadius:30,
+    padding: 5
+  },
+  tabBarLabelStyle:{
+    fontFamily: "Avenir-Medium",
+    margin: 2
+  }
+  
 };
 
+const sceneContainerStyle = {
+  backgroundColor: 'white',
+};
 
 
 
@@ -146,9 +170,8 @@ const MyAppHeader = () => {
 
 function App() {
   return (  
-   <NavigationContainer theme = {customTheme}>
-   <MyTabs />
-  <StatusBar style="auto" />
+   <NavigationContainer>
+           <MyTabs />
  
  </NavigationContainer>
    );
@@ -158,7 +181,7 @@ const customTheme = {
   ...AmplifyTheme,
   colors: {
     ...AmplifyTheme.colors,
-    background: 'white'
+    //background: 'white'
   },
 };
 

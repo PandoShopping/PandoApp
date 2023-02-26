@@ -9,6 +9,10 @@ import NumericalInput from './NumericalInput';
 import DropdownSize from './DropdownSize';
 import MultilineTextInput from './MultilineTextInput';
 
+import SaveIcon from 'react-native-vector-icons/AntDesign'
+import Button from './Button'
+
+
 
 const AddListingForm = () => {
   //  const [category, setCategory] = useState('Clothing');
@@ -41,9 +45,15 @@ const AddListingForm = () => {
         <TextInputExample title="Nordstrom Rack"> </TextInputExample>
 
         <Text style={styles.text}>Size</Text>
+
         <DropdownSize>   </DropdownSize>
 
-
+        <Button style = {styles.buttonBorders} theme="secondary" label="Save" icon = { <SaveIcon
+            name={"checkcircleo"}
+            size={18}
+            color="white"
+            style={styles.buttonIcon}
+          />}/>
 
 
       </View>
@@ -78,6 +88,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingHorizontal: 15,
   }, 
+
+  buttonIcon: {
+    paddingRight: 10,
+    
+  }, //don't delete this
+
 });
 
 

@@ -4,42 +4,43 @@ import { VStack } from '@react-native-material/core';
 import {COLORS} from '../constants/theme'
 import LogOut from "@expo/vector-icons/Feather";
 
-const icons = { 
-
-
-}
 
 export default function Button({ label, theme, onPress, icon}) {
   if (theme === "primary") { 
     return (
       <View
-      style={[styles.buttonContainer]}
+      style={[styles.lightButtonContainer]}
       >
         <Pressable
           style={[styles.button, {  }]}
-          onPress={onPress}
-        >
-         
+          onPress={onPress}>
          {icon}
-
-          {/* <FontAwesome>
-            name = 
-          </FontAwesome> 
-          
-          
-          */}
-          
-          <Text style={[styles.buttonLabel]}>{label}</Text>
+          <Text style={[styles.primaryButtonLabel]}>{label}</Text>
         </Pressable>
     </View>
     );
   } 
 
+  else if (theme === "secondary") { 
+    return (
+      <View
+      style={[styles.mediumButtonContainer]}
+      >
+        <Pressable
+          style={[styles.button, {  }]}
+          onPress={onPress}>
+         {icon}
+          <Text style={[styles.tertiaryButtonLabel]}>{label}</Text>
+        </Pressable>
+    </View>
+    );
+  }
+
   else if (theme === "bigAss") { 
     return (
       <View style={[styles.biggerButtonContainer]}>
         <Pressable style={[styles.button, { backgroundColor: COLORS.buttonPrimaryLight }]} onPress={onPress} > 
-              <VStack spacing ={5} style = {{alignItems: "center"}} > 
+              <VStack spacing ={8} style = {{alignItems: "center"}} > 
               <Image style={{width: 180, height: 136}} source={require("./../assets/images/megacreator.png")} />
                <Text style={[styles.primaryButtonLabel]}>New image</Text>
                 <Text style={[styles.secondaryButtonLabel]}>{label}
@@ -61,10 +62,10 @@ export default function Button({ label, theme, onPress, icon}) {
 }
 
 const styles = StyleSheet.create({
-  buttonContainer: {
-    width: 275,
-    height: 55,
-    marginHorizontal: 20,
+  lightButtonContainer: {
+    width: 360,
+    height: 50,
+  //  marginHorizontal: 20,
     marginBottom: 5,
     alignItems: 'center',
     justifyContent: 'center',
@@ -73,9 +74,23 @@ const styles = StyleSheet.create({
     borderRadius: 20
   },
 
+  mediumButtonContainer:{
+
+    width: 360,
+    height: 50,
+  //  marginHorizontal: 20,
+    marginBottom: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 3,
+    backgroundColor: COLORS.buttonPrimaryMedium,
+    borderRadius: 20
+
+  },
+
   biggerButtonContainer: {
     width: 360,
-    height: 300,
+    height: 280,
   },
 
   button: {
@@ -89,9 +104,8 @@ const styles = StyleSheet.create({
   },
  
   primaryButtonLabel: {
-    paddingTop: 30,
     color: "#25292e",
-    fontSize: 18,
+    fontSize: 14,
     fontFamily: "Avenir-Heavy",
   },
 
@@ -101,6 +115,13 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontFamily: "Avenir-Medium",
 
+  },
+
+  tertiaryButtonLabel:{
+    color: "white",
+    fontSize: 15,
+    textAlign: "center",
+    fontFamily: "Avenir-Medium",
   },
 
   buttonIcon: {
