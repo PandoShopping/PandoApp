@@ -1,14 +1,10 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View} from "react-native";
-import { CurrentRenderContext, NavigationContainer } from '@react-navigation/native';
-// import {
-//   createMaterialBottomTabNavigator,
-//   NavigationMaterialBottomTabOptions,
-// } from 'react-navigation-material-bottom-tabs';
+import { CurrentRenderContext, NavigationContainer,
+  useFocusEffect, } from '@react-navigation/native';
+// import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
-
 
 import { ProfileHomeScreen, AddListingScreen, BrowseListingsScreen} from "./screens"
 import Icon from 'react-native-vector-icons/FontAwesome5'
@@ -43,7 +39,9 @@ Amplify.configure({
   }
 });
 
-const Tab = createMaterialBottomTabNavigator();
+// const Tab = createMaterialBottomTabNavigator();
+const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
 
 const screenOptions = {
   tabBarStyle:{
@@ -70,87 +68,32 @@ const sceneContainerStyle = {
 };
 
 
-
-
 function MyTabs() {
-  // return (
-  //  // <PaperProvider theme={DefaultTheme}>
-
-  // //  </PaperProvider>
-
-    screenOptions={({ route }) => ({
-      tabBarIcon: ({ focused, color, size }) => {
-        let iconName;
-
-  
-  
-  // // <Tab.Navigator
-  // //   initialRouteName="Shop"
-  // //   barStyle={{ backgroundColor: 'tomato' }}
-
-  // //   activeColor="#e91e63"
-
-  // //   screenOptions={{
-  // //     tabBarActiveTintColor: COLORS.buttonPrimaryMedium,
-  // //     backgroundColor: 'green'
-  // //   }}
-
-  // // >
-
-  // //     <Tab.Screen
-  // //       name="Shop"
-  // //       component={BrowseListingsScreen}
-  // //       options={{
-  // //         tabBarLabel: 'Shop',
-  // //         tabBarIcon: ({ color }) => (
-  // //           <MaterialCommunityIcons name="home" color={color} size={26} />
-  // //         ),
-  // //       }}
-  // //     />
-
-
-  // //    <Tab.Screen name="Sell" component={AddListingScreen} />
-  // //    <Tab.Screen name="Profile" component={ProfileHomeScreen} />
-  // //   </Tab.Navigator>
-  // <BottomNavigation
-  //     navigationState={{ index, routes }}
-  //     onIndexChange={setIndex}
-  //     renderScene={renderScene}
-  //   />
-
-
-  // );
-
-  const [index, setIndex] = React.useState(0);
-  const [routes] = React.useState([
-    { key: 'music', title: 'Favorites', focusedIcon: 'heart', unfocusedIcon: 'heart-outline', backgroundColor: 'green'},
-    { key: 'albums', title: 'Albums', focusedIcon: 'album', color: 'green'},
-    { key: 'recents', title: 'Recents', focusedIcon: 'history', color: 'green' },
-    { key: 'notifications', title: 'Notifications', focusedIcon: 'bell', unfocusedIcon: 'bell-outline', color: 'green' },
-  ]);
-
-  const renderScene = BottomNavigation.SceneMap({
-    music: BrowseListingsScreen,
-    albums: AddListingScreen,
-    recents: AddListingScreen,
-    notifications: ProfileHomeScreen,
-  });
-
-  // const renderTab = (route, focused, color) => { 
-  //   switch (route.key) {
-  //     case 'music':
-  //       return <MusicRoute jumpTo={jumpTo} color={color} focused={focused} />;
-  //     case 'albums':
-  //       return <AlbumsRoute jumpTo={jumpTo} />;
-  //   }
-  // }
-
   return (
-    <BottomNavigation
-      navigationState={{ index, routes }}
-      onIndexChange={setIndex}
-      renderScene={renderScene}
-    />
+
+    <Tab.Navigator {...{ screenOptions, sceneContainerStyle }}>
+    <Tab.Screen name="Shop" component={BrowseListingsScreen} options={{ 
+      title: "fuck shit bitch",
+          tabBarIcon: ({ color, size }) => (
+            <AntDesign name="shoppingcart" color={color} size={size} />
+          ), 
+        }}
+/>
+    <Tab.Screen name="Sell" component={AddListingScreen} options={{
+          tabBarIcon: ({ color, size }) => (
+            <AntDesign name="creditcard" color={color} size={size} />
+          ),
+        }}
+/>
+     <Tab.Screen name="Profile" component={ProfileHomeScreen} options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="person-outline" color={color} size={size} />
+          ),
+        }}
+/>
+
+  </Tab.Navigator>
+
   );
 }
 
