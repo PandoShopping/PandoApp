@@ -1,16 +1,10 @@
 import React from "react";
 import { Alert } from 'react-native';
-<<<<<<< HEAD:screens/profile/ProfileScreen.js
-import { StyleSheet, Text, View } from "react-native";
-=======
->>>>>>> d00331c6f47699e4621959a9e599d308e2824e62:screens/profile/ProfileHomeScreen.js
 import { Ionicons } from "@expo/vector-icons";
 import { Auth } from 'aws-amplify'; 
 import Button from '../../components/Button'
 import LogOut from "@expo/vector-icons/Feather";
-<<<<<<< HEAD:screens/profile/ProfileScreen.js
 import Profile from '../../components/Profile'
-=======
 import { Text, View, TextInput, Keyboard, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 import TextInputExample from './../../components/TextInputExample';
 import Amplify, { API, graphqlOperation } from 'aws-amplify'; 
@@ -18,7 +12,6 @@ import { createUser, updateUser } from  './../../src/graphql/mutations';
 import { getUser } from './../../src/graphql/queries'; 
 
 const initalState = { }; 
->>>>>>> d00331c6f47699e4621959a9e599d308e2824e62:screens/profile/ProfileHomeScreen.js
 
 const ProfileHomeScreen = () => {
 
@@ -54,9 +47,7 @@ const ProfileHomeScreen = () => {
       alert(error); 
     }
   };
-<<<<<<< HEAD:screens/profile/ProfileScreen.js
-  
-=======
+
 
 //move this to its own file 
   const openImagePicker = async () => {
@@ -64,16 +55,14 @@ const ProfileHomeScreen = () => {
     fetchProfileInformation(); 
   };
 
->>>>>>> d00331c6f47699e4621959a9e599d308e2824e62:screens/profile/ProfileHomeScreen.js
+
 
 return (
 	<View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
 	{/* <Text style={{ color: "#006600", fontSize: 40 }}>ProfileHomeScreen</Text> */}
 	{/* <Ionicons name="md-home" size={80} color="#006600" /> */}
-<<<<<<< HEAD:screens/profile/ProfileScreen.js
-
  <Profile/>
-=======
+
   <Button theme="primary" label="Add a profile picture" onPress={openImagePicker} icon = { <LogOut
             name={"log-out"}
             size={18}
@@ -98,7 +87,6 @@ return (
 
 
 
->>>>>>> d00331c6f47699e4621959a9e599d308e2824e62:screens/profile/ProfileHomeScreen.js
 	</View>
 
 
