@@ -11,9 +11,11 @@ const TestDisplayAllListings = () => {
     console.log("hello hello hello"); 
   }, []); 
 
+    //change this to a subscription 
   async function fetchListings() { 
     try { 
       const listingData = await API.graphql(grpahqlOperation(listListings)); 
+      console.log(listingData);       
       const listingList = listingData.items; //idk if this is right 
       setListings(listingList); 
     } catch (e) { 
