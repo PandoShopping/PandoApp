@@ -9,7 +9,7 @@ export default function Button({ label, theme, onPress, icon}) {
   if (theme === "primary") { 
     return (
       <View
-      style={[styles.lightButtonContainer]}
+      style={[styles.uniqueButtonContainer]}
       >
         <Pressable
           style={[styles.button, {  }]}
@@ -35,6 +35,19 @@ export default function Button({ label, theme, onPress, icon}) {
     </View>
     );
   }
+
+  else if (theme === "notPressable") { 
+    return (
+      <View
+      style={[styles.mediumButtonContainer]}
+      >
+          style={[styles.button, {  }]}
+         {icon}
+          <Text style={[styles.tertiaryButtonLabel]}>{label}</Text>
+    </View>
+    );
+  }
+
 
   else if (theme === "bigAss") { 
     return (
@@ -71,7 +84,25 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 3,
     backgroundColor: COLORS.buttonPrimaryLight,
-    borderRadius: 20
+    borderRadius: 20,
+    
+    
+  },
+
+  uniqueButtonContainer: {
+    width: 360,
+    height: 50,
+  //  marginHorizontal: 20,
+    marginBottom: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 3,
+    backgroundColor: COLORS.buttonPrimaryLight,
+    borderRadius: 20,
+    position: "absolute",
+    bottom: 5
+    
+    
   },
 
   mediumButtonContainer:{
@@ -100,6 +131,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   flexDirection: 'row',
+  
 
   },
  

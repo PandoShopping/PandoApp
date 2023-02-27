@@ -73,7 +73,8 @@ function MyTabs() {
 
     <Tab.Navigator {...{ screenOptions, sceneContainerStyle }}>
     <Tab.Screen name="Shop" component={BrowseListingsScreen} options={{ 
-      title: "fuck shit bitch",
+      //title: "fuck shit bitch",
+      headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <AntDesign name="shoppingcart" color={color} size={size} />
           ), 

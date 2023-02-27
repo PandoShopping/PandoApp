@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View, StyleSheet, SafeAreaView, ScrollView } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import AddListingForm from "./../../components/AddListingForm";
+import AddListingForm from "../../components/AddListingForm";
 import AddImage from "../../components/AddImage.js";
 
 const AddListingScreen = () => {

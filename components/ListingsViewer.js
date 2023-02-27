@@ -34,7 +34,7 @@ const ListingsViewer = () => {
       size: 'XL', 
       gender: 'Womens', 
       isPurchased: 'No',
-      imagePath: "'./../assets/images/placeholder-image.png'"
+      imagePath: "'./../assets/images/newyork.png'"
     },
     {
       id: 'test-01',

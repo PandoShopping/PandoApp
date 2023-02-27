@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, View, StyleSheet, Image, FlatList} from "react-native";
 import { COLORS, FONTS } from '../constants';
 import { HStack, VStack } from '@react-native-material/core';
-import { placeholderImage } from "../constants";
+import { placeholderImage, newyork } from "../constants";
 
 
 const Listing = (props) => {
