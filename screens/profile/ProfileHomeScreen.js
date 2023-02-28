@@ -2,9 +2,8 @@ import React from "react";
 import { Alert } from 'react-native';
 import { Ionicons } from "@expo/vector-icons";
 import { Auth } from 'aws-amplify'; 
-import Button from '../../components/Button'
+import Button from './../../components/Button'
 import LogOut from "@expo/vector-icons/Feather";
-import Profile from '../../components/Profile'
 import { Text, View, TextInput, Keyboard, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 import TextInputExample from './../../components/TextInputExample';
 import Amplify, { API, graphqlOperation } from 'aws-amplify'; 
@@ -48,7 +47,6 @@ const ProfileHomeScreen = () => {
     }
   };
 
-
 //move this to its own file 
   const openImagePicker = async () => {
     console.log("image picker opened"); 
@@ -56,13 +54,10 @@ const ProfileHomeScreen = () => {
   };
 
 
-
 return (
 	<View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
 	{/* <Text style={{ color: "#006600", fontSize: 40 }}>ProfileHomeScreen</Text> */}
 	{/* <Ionicons name="md-home" size={80} color="#006600" /> */}
- <Profile/>
-
   <Button theme="primary" label="Add a profile picture" onPress={openImagePicker} icon = { <LogOut
             name={"log-out"}
             size={18}

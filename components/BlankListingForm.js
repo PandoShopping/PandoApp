@@ -1,6 +1,6 @@
 import { FormField } from 'aws-amplify-react-native';
 import React, { useState, useEffect, Component } from 'react';
-import { Text, View, TextInput, Keyboard, StyleSheet, TouchableWithoutFeedback, Alert } from 'react-native';
+import { Text, View, TextInput, Keyboard, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 
 import TextInputExample from './TextInputExample';
 import DropdownGender from './DropdownGender';
@@ -8,54 +8,22 @@ import Dropdown from './Dropdown';
 import NumericalInput from './NumericalInput';
 import DropdownSize from './DropdownSize';
 import MultilineTextInput from './MultilineTextInput';
-import BlankListingForm from './BlankListingForm';
+
 import SaveIcon from 'react-native-vector-icons/AntDesign'
 import Button from './Button'
 
-const initialState = { 
-  id: "", 
-  name: "", 
-  description: "", 
-  category: "", 
-  price: "", 
-  ogPrice: "", 
-  brand: "", 
-  size: "", 
-  gender: ""
-}; 
 
-const AddListingForm = () => {
+
+const BlankListingForm = () => {
   //  const [category, setCategory] = useState('Clothing');
 
-  const [gender, setGender] = useState([]);
-  const [category, setCategory] = useState([]);
-  const [size, setSize] = useState([]);
-  const [showEmptyForm, setShowEmptyForm] = useState(false); 
-
-  const handleGenderChanged = (newGender) => { 
-    setGender(newGender); 
-  }
-
-  const handleClick = () => {
-    setShowEmptyForm(!showEmptyForm);
-    console.log("pressed")
-  };
-
   return (
-    
     <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false} >
 
       <View style={styles.backgroundView}>
 
-        {
-          showEmptyForm ? 
-          
-          
-          <BlankListingForm/>
-          
-           : 
-           <View> 
-          <Text style={styles.topmostText}>Select clothing gender</Text>
+
+        <Text style={styles.topmostText}>Select clothing gender</Text>
         <DropdownGender> </DropdownGender>
         <Text style={styles.text}>Enter Listing Name</Text>
         <MultilineTextInput title="Little black dress with mesh cutouts, never used">
@@ -85,11 +53,8 @@ const AddListingForm = () => {
             size={18}
             color="white"
             style={styles.buttonIcon}
-          />} onPress={handleClick}/>
-          </View>
-          
-          
-        }
+          />}/>
+
 
       </View>
     </TouchableWithoutFeedback>
@@ -132,5 +97,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default AddListingForm; 
-
+export default BlankListingForm; 
